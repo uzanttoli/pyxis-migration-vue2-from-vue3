@@ -1,0 +1,13 @@
+<svg width="135" height="75" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="pattern" x="0" y="0" width="52" height="52" patternUnits="userSpaceOnUse">
+      <!-- Linhas diagonais e fundo transparente -->
+      <line x1="0" y1="0" x2="52" y2="52" stroke="#444cf7" stroke-width="10"/>
+      <line x1="52" y1="0" x2="0" y2="52" stroke="#444cf7" stroke-width="10"/>
+      <line x1="0" y1="52" x2="52" y2="0" stroke="#444cf7" stroke-width="10"/>
+      <line x1="0" y1="0" x2="52" y2="52" stroke="#444cf7" stroke-width="10"/>
+    </pattern>
+  </defs>
+  <rect width="135" height="75" fill="#e5e5f7" opacity="0.8"/>
+  <rect width="135" height="75" fill="url(#pattern)" />
+</svg>

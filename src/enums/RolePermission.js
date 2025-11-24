@@ -1,0 +1,4 @@
+export const ROLE_PERMISSION = {
+  REGIONAL: 'REGIONAL',
+  ALMOPE: 'ALMOPE'
+}

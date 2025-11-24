@@ -1,0 +1,106 @@
+{
+  "appBar": {
+    "acess": "Acessos hoje:"
+  },
+  "appSideBar": {
+    "menu": {
+      "home": {
+        "title": "Inicio"
+      },
+      "managerial": {
+        "title": "Gerencial"
+      },
+      "occupation": {
+        "title": "Ocupacao"
+      },
+      "workflow": {
+        "title": "WorkFlow"
+      },
+      "lighthouse": {
+        "title": "Farol"
+      },
+      "coordinator": {
+        "title": "Coordenador",
+        "subMenu": {
+          "item1": "Dados Online"
+        }
+      },
+      "base": {
+        "title": "Bases"
+      },
+      "supervisor": {
+        "title": "Supervisor",
+        "subMenu": {
+          "item1": "Dados Online",
+          "item2": "Tratar Demandas"
+        }
+      },
+      "operator": {
+        "title": "Operador",
+        "subMenu": {
+          "item1": "Dados Online"
+        }
+      },
+      "utilities": {
+        "title": "Utilitários",
+        "subMenu": {
+          "item1": "Links Rapidos",
+          "item2": "Calculadora Percentual",
+          "item3": "Calculadora Pro Rata",
+          "item4": "Palitagem",
+          "item5": "Vendas Porta-Porta",
+          "item6": "Adicionar Demandas"
+        }
+      },
+      "tabulators": {
+        "title": "Formulários",
+        "subMenu": {
+          "item1": "Tabuladores"
+        },
+        "name": {
+          "token": "Token",
+          "changeLink": "Alteração Vinculo",
+          "unproductiveRegistration": "Cadastro de Improdutivo",
+          "purgeScoreboard": "Expurgo Scoreboard",
+          "changePassword": "Alterar Senha",
+          "paymentError": "Erro de Pagamento",
+          "financialUndue": "Indevidas Financeiras",
+          "systemicErrors": "Erros Sistemicos"
+        }
+      },
+      "operation": {
+        "title": "Operações",
+        "subMenu": {
+          "item1": "Coordenador",
+          "item2": "Supervisor",
+          "item3": "Operador"
+        }
+      },
+      "report": {
+        "title": "Relatórios Online",
+        "subMenu": {
+          "item1": "Gerencial",
+          "item2": "Ocupação",
+          "item3": "Farol"
+        }
+      }
+    }
+  },
+  "info": {
+    "translation": "Ainda estamos realizando a tradução da Pyxis para Inglês e Italiano!"
+  },
+  "about": {
+    "name": "Sobre",
+    "title": "Quem Somos",
+    "card": {
+      "titleLeader": "Lider Tecnico",
+      "descriptionLeader": "Responsável por liderar o time de desenvolvimento da Pyxis, com a função de arquitetar e elaborar uma visão técnica do projeto, levando em consideração as necessidades e objetivos dos seus usuários, com o intuito de obter uma máxima eficiência durante o processo de desenvolvimento. Controlar o pipeline do projeto, organizar as ideias, filtrá-las e identificar quais podem evoluir para aplicações/soluções na ferramenta, definir metas e prioridades afim de garantir os prazos estipulados.",
+      "titleDeveloper": "Desenvolvedor Full Stack Jr",
+      "descriptionDeveloper": "Realizar levantamento de requerimentos. Desenvolver documentação de projetos, codificação e interface com o cliente. Realizar manutenção de soluções customizadas em plataforma e criação de paginas utilizando HTML, CSS, Javascript, VueJs, Vuetify, PHP e Nodejs. Realizar parametrização de servidores de aplicação.",
+      "titleAnalyst": "Analista de Dados Jr",
+      "descriptionAnalyst": "Responsável por tirar insights dos dados, analise de negócio, construção de rotinas e scripts SQL, criação de tabelas, procedures, views, coleta e mineração de dados além de modelagem de dados. Desenvolvimento de relatórios com base nos dados do sistema.",
+      "titleAssistantAnalyst": "Analista de Dados Jr",
+      "descriptionAssistantAnalyst": "Auxiliar na coleta, registro e divulgação de informações relevantes à gestão operacional; Dar suporte na extração de dados e alimentação de relatórios; Apoiar na análise das informações geradas e sinalização dos desvios operacionais; Dar suporte no Controle de Bases de Dados (Coleta e Armazenagem de Dados)."
+    }
+  }
+}

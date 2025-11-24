@@ -1,0 +1,103 @@
+{
+  "appBar": {
+    "acess": "Accesses today:"
+  },
+  "appSideBar": {
+    "menu": {
+      "home": {
+        "title": "Home"
+      },
+      "managerial": {
+        "title": "Managementl"
+      },
+      "occupation": {
+        "title": "Occupation"
+      },
+      "lighthouse": {
+        "title": "Lighthouse"
+      },
+      "coordinator": {
+        "title": "Coordinator",
+        "subMenu": {
+          "item1": "Online Datae"
+        }
+      },
+      "supervisor": {
+        "title": "supervisor",
+        "subMenu": {
+          "item1": "Online Data",
+          "item2": "Treat for demands"
+        }
+      },
+      "base": {
+        "title": "bases"
+      },
+      "operator": {
+        "title": "Operator",
+        "subMenu": {
+          "item1": "Online Datae"
+        }
+      },
+      "utilities": {
+        "title": "Utilities",
+        "subMenu": {
+          "item1": "Quick links",
+          "item2": "Percentage calculator",
+          "item3": "Pro ratula calculator",
+          "item4": "Palitagem",
+          "item5": "Door-door sales",
+          "item6": "Add demands"
+        }
+      },
+      "tabulators": {
+        "title": "Forms",
+        "subMenu": {
+          "item1": "Tabuladores"
+        },
+        "name": {
+          "token": "Token",
+          "changeLink": "Change Link",
+          "unproductiveRegistration": "Registration of unproductive",
+          "purgeScoreboard": "Purge Scoreboard",
+          "changePassword": "Change Password",
+          "paymentError": "Payment error",
+          "financialUndue": "Financial undue",
+          "systemicErrors": "Systemic Erross"
+        }
+      },
+      "operation": {
+        "title": "Operation",
+        "subMenu": {
+          "item1": "Coordinator",
+          "item2": "Supervisor",
+          "item3": "Operator"
+        }
+      },
+      "report": {
+        "title": "Online reports",
+        "subMenu": {
+          "item1": "Managementl",
+          "item2": "Occupation",
+          "item3": "Lighthouse"
+        }
+      }
+    }
+  },
+  "info": {
+    "translation": "We are still fulfilling the translation of Pyxis to English and Italian!"
+  },
+  "about": {
+    "name": "About",
+    "title": "Who we are",
+    "card": {
+      "titleLeader": "Technical lider",
+      "descriptionLeader": "Responsible for leading the Pyxis development team, with the function of architecting and elaborating a technical view of the project, taking into account the needs and objectives of its users, in order to obtain maximum efficiency during the development process.Control the pipeline of the project, organize the ideas, filter them and identify which ones can evolve for applications / solution solutions, set goals and priorities in order to ensure the stipulated deadlines.",
+      "titleDeveloper": "Developer Full Stack Jr",
+      "descriptionDeveloper": "Realize requirements.Develop project documentation, encoding and customer interface.Perform maintaining customized platform and page creation solutions using HTML, CSS, JavaScript, Vuejs, Vuetify, PHP and NodeJs.Perform parameterization of application servers.",
+      "titleAnalyst": "Jr Data Analyst",
+      "descriptionAnalyst": "Responsible for taking data insights, business analysis, construction of routines and SQL scripts, creating tables, procedures, views, data collection and mining as well as data modeling.Development of reports based on system data.",
+      "titleAssistantAnalyst": "Jr Data Analyst",
+      "descriptionAssistantAnalyst": "Assist in the collection, record and dissemination of information relevant to operational management;Support in data extraction and reporting;Support in the analysis of the information generated and signaling operational deviations;Support in database control (data collection and storage)."
+    }
+  }
+}

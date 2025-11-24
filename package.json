@@ -1,0 +1,49 @@
+{
+  "name": "pyxis",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@amcharts/amcharts4": "^4.10.38",
+    "@vue/compat": "^3.4.21",
+    "apexcharts": "^5.3.6",
+    "axios": "^1.7.3",
+    "chart.js": "^4.4.2",
+    "core-js": "^3.37.1",
+    "dotenv": "^16.4.5",
+    "moment": "^2.30.1",
+    "pinia": "^2.1.7",
+    "socket.io-client": "^4.7.5",
+    "sweetalert2": "^11.13.2",
+    "vee-validate": "^4.13.0",
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.2",
+    "vue3-apexcharts": "^1.10.0",
+    "vuetify": "^3.6.0",
+    "vuex": "^4.0.2",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "@babel/eslint-parser": "^7.12.16",
+    "@fortawesome/fontawesome-free": "^6.6.0",
+    "@mdi/font": "^7.4.47",
+    "@vue/cli-plugin-babel": "^5.0.8",
+    "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-plugin-router": "^5.0.8",
+    "@vue/cli-service": "^5.0.8",
+    "@vue/compiler-sfc": "^3.4.21",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.10.2",
+    "eslint-plugin-prettier": "^4.2.5",
+    "eslint-plugin-vue": "^9.25.0",
+    "prettier": "^2.8.8",
+    "sass": "^1.77.2",
+    "sass-loader": "^13.3.2",
+    "vue-loader": "^17.4.2"
+  }
+}

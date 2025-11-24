@@ -1,0 +1,103 @@
+{
+  "appBar": {
+    "acess": "Accessi oggi:"
+  },
+  "appSideBar": {
+    "menu": {
+      "home": {
+        "title": "Cominciare"
+      },
+      "managerial": {
+        "title": "Manageriale"
+      },
+      "occupation": {
+        "title": "Occupazione"
+      },
+      "lighthouse": {
+        "title": "Faro"
+      },
+      "coordinator": {
+        "title": "Coordinatore",
+        "subMenu": {
+          "item1": "Dati online"
+        }
+      },
+      "base": {
+        "title": "basi"
+      },
+      "supervisor": {
+        "title": "Supervisore",
+        "subMenu": {
+          "item1": "Dati online",
+          "item2": "Trattare le richieste"
+        }
+      },
+      "operator": {
+        "title": "Operatore",
+        "subMenu": {
+          "item1": "Dati online"
+        }
+      },
+      "utilities": {
+        "title": "Utilità ",
+        "subMenu": {
+          "item1": "Collegamenti veloci ",
+          "item2": "Calcolatore percentuale ",
+          "item3": "Pro calcolatore del ratto ",
+          "item4": "Palitagem ",
+          "item5": "Vendite di Porta-Door ",
+          "item6": "Aggiungi richieste"
+        }
+      },
+      "tabulators": {
+        "title": "Le forme",
+        "subMenu": {
+          "item1": "Tabuladores"
+        },
+        "name": {
+          "token": "Token",
+          "changeLink": "Cambia Collegamento",
+          "unproductiveRegistration": "Registrazione dell'improdotto ",
+          "purgeScoreboard": "Tabellone profondo ",
+          "changePassword": "Cambia la password",
+          "paymentError": "Errore di pagamento ",
+          "financialUndue": "Indebito ",
+          "systemicErrors": "Errori sistemici"
+        }
+      },
+      "operation": {
+        "title": "Rapporto",
+        "subMenu": {
+          "item1": "Coordinatore",
+          "item2": "Supervisore",
+          "item3": "Operatore"
+        }
+      },
+      "report": {
+        "title": "Rapporti in linea",
+        "subMenu": {
+          "item1": "Manageriale",
+          "item2": "Occupazione",
+          "item3": "Faro"
+        }
+      }
+    }
+  },
+  "info": {
+    "translation": "Stiamo ancora adempando la traduzione di Pyxis in inglese e italiano!"
+  },
+  "about": {
+    "name": "Di",
+    "title": "Chi siamo",
+    "card": {
+      "titleLeader": "Lider Tecnico",
+      "descriptionLeader": "Responsabile della guida del team di sviluppo di Pyxis, con la funzione di architettura ed elaborare una visione tecnica del progetto, tenendo conto delle esigenze e degli obiettivi dei propri utenti, al fine di ottenere la massima efficienza durante il processo di sviluppo.Controlla la conduttura del progetto, organizza le idee, filtrarle e identificare quali possono evolversi per applicazioni / soluzioni di soluzioni, impostare obiettivi e priorità al fine di garantire le scadenze previste.",
+      "titleDeveloper": "Sviluppatore Full Stack JR",
+      "descriptionDeveloper": "Realizzare i requisiti.Sviluppa la documentazione del progetto, la codifica e l'interfaccia cliente.Eseguire il mantenimento delle soluzioni personalizzate della piattaforma e della creazione di pagine che utilizzano HTML, CSS, JavaScript, VUEJS, VUETIFY, PHP e Nodejs.Eseguire la parametrizzazione dei server applicativi.",
+      "titleAnalyst": "Analista dei dati JR.",
+      "descriptionAnalyst": "Responsabile dell'assunzione di informazioni sui dati, analisi aziendale, costruzione di routine e script SQL, creazione di tabelle, procedure, viste, raccolta dati e mining e modellazione dei dati.Sviluppo di report basato sui dati di sistema.",
+      "titleAssistantAnalyst": "Analista dei dati JR.",
+      "descriptionAssistantAnalyst": "Assistere nella raccolta, registrazione e diffusione di informazioni rilevanti per la gestione operativa;Supporto in estrazione e reporting dei dati;Supporto nell'analisi delle informazioni generate e segnalando le deviazioni operative;Supporto nel controllo del database (raccolta e archiviazione dei dati)."
+    }
+  }
+}

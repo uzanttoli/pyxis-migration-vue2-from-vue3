@@ -1,0 +1,334 @@
+{
+  "filtros": [
+    {
+      "text": "Atendidas",
+      "value": "ATENDIDAS"
+    },
+    {
+      "text": "TMT",
+      "value": "TMT"
+    },
+    {
+      "text": "% Rechamada",
+      "value": "RECHAMADA"
+    },
+    {
+      "text": "% Rechamada 72h",
+      "value": "RECHAMADA_72H"
+    },
+    {
+      "text": "% Desconexão",
+      "value": "DESCONEXOES"
+    },
+    {
+      "text": "% Shortcall",
+      "value": "SHORTCALL"
+    },
+    {
+      "text": "Tempo Logado",
+      "value": "LOGADO_CTI"
+    },
+    {
+      "text": "Jackin",
+      "value": "JACKIN_SHE"
+    }
+  ],
+  "headers": [
+    {
+      "text": "Data Trabalho",
+      "value": "data",
+      "align": "center"
+    },
+    {
+      "text": "Atendidas",
+      "value": "ATENDIDAS",
+      "align": "center"
+    },
+    {
+      "text": "Identificadas",
+      "value": "IDENTIFICADAS",
+      "align": "center"
+    },
+    {
+      "text": "TMT",
+      "value": "TMT",
+      "align": "center"
+    },
+    {
+      "text": "Rechamadas %",
+      "value": "RECHAMADA",
+      "align": "center"
+    },
+    {
+      "text": "Logado",
+      "value": "LOGADO_CTI",
+      "align": "center"
+    },
+    {
+      "text": "Jackin com HE",
+      "value": "JACKIN_CHE",
+      "align": "center"
+    },
+    {
+      "text": "Logado sem HE",
+      "value": "LOGADO_SHE",
+      "align": "center"
+    },
+    {
+      "text": "Jackin sem HE",
+      "value": "JACKIN_SHE",
+      "align": "center"
+    },
+    {
+      "text": "NR 17",
+      "value": "NR17",
+      "align": "center"
+    },
+    {
+      "text": "Ocupação",
+      "value": "TX_OCUPACAO",
+      "align": "center"
+    },
+    {
+      "text": "Short Call",
+      "value": "SHORTCALL",
+      "align": "center"
+    },
+    {
+      "text": "Rechamadas 24h",
+      "value": "RECHAMADA_24H",
+      "align": "center"
+    },
+    {
+      "text": "Rechamadas 48h",
+      "value": "RECHAMADA_48H",
+      "align": "center"
+    },
+    {
+      "text": "Rechamadas 72h",
+      "value": "RECHAMADA_72H",
+      "align": "center"
+    },
+    {
+      "text": "Desconexão",
+      "value": "DESCONEXOES",
+      "align": "center"
+    },
+    {
+      "text": "Pausas",
+      "value": "PAUSAS",
+      "align": "center"
+    },
+    {
+      "text": "Padrão",
+      "value": "PADRAO",
+      "align": "center"
+    },
+    {
+      "text": "Lanche",
+      "value": "LANCHE",
+      "align": "center"
+    },
+    {
+      "text": "Particular",
+      "value": "PARTICULAR",
+      "align": "center"
+    },
+    {
+      "text": "Descanso",
+      "value": "DESCANSO",
+      "align": "center"
+    },
+    {
+      "text": "Sistema",
+      "value": "SISTEMA",
+      "align": "center"
+    },
+    {
+      "text": "Treinamento",
+      "value": "TREINAMENTO",
+      "align": "center"
+    },
+    {
+      "text": "Saude",
+      "value": "SAUDE",
+      "align": "center"
+    },
+    {
+      "text": "Feedback",
+      "value": "FEEDBACK",
+      "align": "center"
+    },
+    {
+      "text": "Suporte",
+      "value": "SUPORTE",
+      "align": "center"
+    },
+    {
+      "text": "Laboral",
+      "value": "LABORAL",
+      "align": "center"
+    },
+    {
+      "text": "Demais Pausas",
+      "value": "DEMAIS_PAUSAS",
+      "align": "center"
+    }
+  ],
+  "headerScoreboardMes": [
+    {
+      "text": "Data de Atualização",
+      "value": "DATA_REFERENCIA",
+      "align": "center",
+      "sortable": false,
+      "class": "grey lighten-2"
+    },
+    {
+      "text": "Range",
+      "value": "RANGE",
+      "align": "center",
+      "sortable": false
+    },
+    {
+      "text": "% ABS",
+      "value": "PERC_ABS",
+      "align": "center",
+      "sortable": false
+    },
+    {
+      "text": "Tempo Logado",
+      "value": "TEMPO_LOGADO",
+      "align": "center",
+      "sortable": false
+    },
+
+    {
+      "text": "Jackin",
+      "value": "JACKIN_SHE",
+      "align": "center",
+      "sortable": false
+    },
+
+    {
+      "text": "Particular",
+      "value": "PARTICULAR",
+      "align": "center",
+      "sortable": false
+    },
+
+    {
+      "text": "TMT",
+      "value": "TMT",
+      "align": "center",
+      "sortable": false
+    },
+    {
+      "text": "% Rechamada",
+      "value": "PERC_RECHAMADA",
+      "align": "center",
+      "sortable": false
+    },
+
+    {
+      "text": "% Transf. Retenção",
+      "value": "PERC_TRANSF_RET",
+      "align": "center",
+      "sortable": false
+    },
+
+    {
+      "text": "Rechamada 72h",
+      "value": "RECHAMADA_72HR",
+      "align": "center",
+      "sortable": false
+    },
+
+    {
+      "text": "Performance OS",
+      "value": "PERFORMANCE_OS",
+      "align": "center",
+      "sortable": false
+    },
+
+    {
+      "text": "TNPS",
+      "value": "TNPS",
+      "align": "center",
+      "sortable": false
+    },
+    {
+      "text": "OCs Financeiras",
+      "value": "OCS_FINANCEIRAS",
+      "align": "center",
+      "sortable": false
+    }
+  ],
+  "headersScoreboardHistorico": [
+    {
+      "text": "Mês Referência",
+      "value": "DATA_REFERENCIA",
+      "align": "center",
+      "class": "grey lighten-2"
+    },
+    {
+      "text": "Range",
+      "value": "RANGE",
+      "align": "center"
+    },
+    {
+      "text": "% Abs",
+      "value": "PERC_ABS",
+      "align": "center"
+    },
+    {
+      "text": "Tempo Logado",
+      "value": "TEMPO_LOGADO",
+      "align": "center"
+    },
+    {
+      "text": "Jackin",
+      "value": "JACKIN_SHE",
+      "align": "center"
+    },
+    {
+      "text": "Particular",
+      "value": "PARTICULAR",
+      "align": "center"
+    },
+    {
+      "text": "TMT",
+      "value": "TMT",
+      "align": "center"
+    },
+    {
+      "text": "% Rechamada",
+      "value": "PERC_RECHAMADA",
+      "align": "center"
+    },
+    {
+      "text": "% Transf Retenção",
+      "value": "PERC_TRANSF_RET",
+      "align": "center"
+    },
+    {
+      "text": "Rechamada 72h",
+      "value": "RECHAMADA_72HR",
+      "align": "center"
+    },
+    {
+      "text": "Performance OS",
+      "value": "PERFORMANCE_OS",
+      "align": "center"
+    },
+    {
+      "text": "TNPS",
+      "value": "TNPS",
+      "align": "center"
+    },
+    {
+      "text": "OC's Financeiras",
+      "value": "OCS_FINANCEIRAS",
+      "align": "center"
+    }
+  ]
+}

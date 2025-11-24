@@ -1,0 +1,21 @@
+{
+  "pausasOcupacao": {
+    "Alimentacao": "mdi-baguette",
+    "Descanso": "mdi-cup-water",
+    "Particular": "mdi-paper-roll",
+    "Feedback": "mdi-account-group",
+    "Treinamento": "mdi-account-group",
+    "Laboral": "mdi-account-group-outline",
+    "Rechamada": "mdi-account-group-outline",
+    "Padrao": "mdi-clock-alert",
+    "Sistema": "mdi-monitor",
+    "Não Identificada": "mdi-cancel",
+    "Sis. Gestantes": "mdi-briefcase-remove-outline",
+    "Sistema Indevida": "mdi-briefcase-remove-outline",
+    "Sis. Rescisao Indireta": "mdi-briefcase-remove-outline",
+    "Sis. Bloqueio Preventivo": "mdi-briefcase-remove-outline",
+    "Sis. Login Desabilitado": "mdi-briefcase-remove-outline",
+    "Sis. Outros": "mdi-briefcase-remove-outline",
+    "Sis. Reset Senha": "mdi-briefcase-remove-outline"
+  }
+}

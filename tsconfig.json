@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    // Habilita todas as checagens de tipo mais rigorosas.
+    // Isso vai resolver a sua questão original!
+    "strict": true,
+
+    // Configurações base para o TypeScript entender seu projeto
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowJs": true,
+    "sourceMap": true,
+
+    // Configuração do alias '@' para apontar para 'src/'
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  // Informa ao TypeScript quais arquivos incluir na verificação
+  "include": ["src/**/*.ts", "src/**/*.vue"],
+  "exclude": ["node_modules"]
+}

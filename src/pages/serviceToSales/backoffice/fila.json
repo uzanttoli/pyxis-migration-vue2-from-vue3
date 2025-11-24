@@ -1,0 +1,32 @@
+[
+  {
+    "FILA_GRUPO": "NET",
+    "SUBMENU": [
+      {
+        "nome": "CLARO RESIDENCIAL",
+        "quantidade": 1429,
+        "idFila": 74
+      }
+    ]
+  },
+  {
+    "FILA_GRUPO": "CLARO",
+    "SUBMENU": [
+      {
+        "nome": "PRE PAGO",
+        "quantidade": 1429,
+        "idFila": 74
+      },
+      {
+        "nome": "POS PAGO",
+        "quantidade": 1429,
+        "idFila": 74
+      },
+      {
+        "nome": "CONTROLE",
+        "quantidade": 1429,
+        "idFila": 74
+      }
+    ]
+  }
+]

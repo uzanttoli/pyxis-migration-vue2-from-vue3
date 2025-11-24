@@ -1,0 +1,38 @@
+html,
+body,
+#app {
+  background-color: #ff0000; /* Vermelho */
+}
+
+fieldset {
+  padding: 15px;
+  border: 1px solid #3333;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+legend {
+  padding: 0 10px;
+  font-size: 18.5px;
+}
+
+::-webkit-scrollbar {
+  height: 8px; /* Altura para scroll horizontal */
+  width: 8px; /* Largura para scroll vertical */
+}
+
+/* Estilo para o trilho da barra de rolagem */
+::-webkit-scrollbar-track {
+  background: #e2e8f0; /* Cor do trilho */
+}
+
+/* Estilo para o "polegar" da barra de rolagem */
+::-webkit-scrollbar-thumb {
+  background: #a0aec0; /* Cor do polegar */
+  border-radius: 16px; /* Bordas arredondadas */
+}
+
+/* Adicionando suporte para navegadores que respeitam scrollbar-color */
+.scrollbar-custom {
+  scrollbar-color: #a0aec0 #e2e8f0; /* Cor do polegar e do trilho */
+  scrollbar-width: thin; /* Define uma largura fina */
+}

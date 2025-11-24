@@ -1,0 +1,142 @@
+[
+  {
+    "motivo": "FELIZ",
+    "descricao": "RECONHECIMENTO PELO ESFORÇO E BONS RESULTADOS"
+  },
+  {
+    "motivo": "FELIZ",
+    "descricao": "BOA RELAÇÃO COM A EQUIPE"
+  },
+  {
+    "motivo": "FELIZ",
+    "descricao": "APOIO DA LIDERANÇA"
+  },
+  {
+    "motivo": "FELIZ",
+    "descricao": "METAS CLARAS E ALCANÇÁVEIS"
+  },
+  {
+    "motivo": "FELIZ",
+    "descricao": "OPORTUNIDADES DE APRENDIZADO E CRESCIMENTO"
+  },
+  {
+    "motivo": "FELIZ",
+    "descricao": "SENTIMENTO DE PERTENCIMENTO E VALORIZAÇÃO"
+  },
+  {
+    "motivo": "FELIZ",
+    "descricao": "APOIO E PROXIMIDADE DA LIDERANÇA"
+  },
+  {
+    "motivo": "FELIZ",
+    "descricao": "OUTROS"
+  },
+  {
+    "motivo": "ANIMADO",
+    "descricao": "ALCANCEI OU SUPEREI MINHAS METAS"
+  },
+  {
+    "motivo": "ANIMADO",
+    "descricao": "RECEBI RECONHECIMENTO PELO MEU ESFORÇO"
+  },
+  {
+    "motivo": "ANIMADO",
+    "descricao": "PARTICIPEI DE CAMPANHAS OU PREMIAÇÕES RECENTES"
+  },
+  {
+    "motivo": "ANIMADO",
+    "descricao": "APRENDI ALGO NOVO E ÚTIL PARA MEU TRABALHO"
+  },
+  {
+    "motivo": "ANIMADO",
+    "descricao": "TIVE UM BOM FEEDBACK DO LÍDER OU DO CLIENTE"
+  },
+  {
+    "motivo": "ANIMADO",
+    "descricao": "AMBIENTE DA EQUIPE ESTÁ POSITIVO E COLABORATIVO"
+  },
+  {
+    "motivo": "ANIMADO",
+    "descricao": "SINTO QUE ESTOU CRESCENDO PROFISSIONALMENTE"
+  },
+  {
+    "motivo": "ANIMADO",
+    "descricao": "ESTOU AJUDANDO CLIENTES E ISSO ME DÁ SATISFAÇÃO"
+  },
+  {
+    "motivo": "ANIMADO",
+    "descricao": "CLIMA NO TIME ESTÁ LEVE E DIVERTIDO"
+  },
+  {
+    "motivo": "ANIMADO",
+    "descricao": "CONSEGUI RESOLVER DESAFIOS SOZINHO(A)"
+  },
+  {
+    "motivo": "ANIMADO",
+    "descricao": "OUTROS"
+  },
+  {
+    "motivo": "CANSADO",
+    "descricao": "SISTEMA/FERRAMENTA ESTAVA LENTO E EXIGIU ESFORÇO EXTRA"
+  },
+  {
+    "motivo": "CANSADO",
+    "descricao": "METAS PARECEM IMPOSSÍVEIS DE ALCANÇAR"
+  },
+  {
+    "motivo": "CANSADO",
+    "descricao": "OUTROS"
+  },
+  {
+    "motivo": "CHATEADO",
+    "descricao": "RECONHECIMENTO INSUFICIENTE PELO ESFORÇO"
+  },
+  {
+    "motivo": "CHATEADO",
+    "descricao": "FALTA DE FEEDBACK CONSTRUTIVO"
+  },
+  {
+    "motivo": "CHATEADO",
+    "descricao": "AMBIENTE DE TRABALHO COM COMUNICAÇÃO RUIM"
+  },
+  {
+    "motivo": "CHATEADO",
+    "descricao": "DIFICULDADES COM FERRAMENTAS/SISTEMAS LENTOS"
+  },
+  {
+    "motivo": "CHATEADO",
+    "descricao": "CONFLITOS COM COLEGAS OU LÍDERES"
+  },
+  {
+    "motivo": "CHATEADO",
+    "descricao": "OUTROS"
+  },
+  {
+    "motivo": "TRISTE",
+    "descricao": "FALTA DE PERSPECTIVAS DE CRESCIMENTO"
+  },
+  {
+    "motivo": "TRISTE",
+    "descricao": "POUCAS OPORTUNIDADES DE DESENVOLVIMENTO PROFISSIONAL"
+  },
+  {
+    "motivo": "TRISTE",
+    "descricao": "SENSAÇÃO DE NÃO SER OUVIDO PELA GESTÃO"
+  },
+  {
+    "motivo": "TRISTE",
+    "descricao": "AMBIENTE POUCO ACOLHEDOR"
+  },
+  {
+    "motivo": "TRISTE",
+    "descricao": "PROBLEMAS PESSOAIS QUE INTERFEREM NO TRABALHO"
+  },
+  {
+    "motivo": "TRISTE",
+    "descricao": "SOLICITAÇÃO DE TROCA DE HORÁRIO NÃO REALIZADA."
+  },
+  {
+    "motivo": "TRISTE",
+    "descricao": "OUTROS"
+  }
+]

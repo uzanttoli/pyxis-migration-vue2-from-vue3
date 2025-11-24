@@ -1,0 +1,11 @@
+const percentage = {
+  filters: {
+    percentage: function (value) {
+      if (value) {
+        let val = (value / 1).toFixed(2).replace('.', ',')
+        return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') + '%'
+      }
+      return '0%'
+    }
+  }
+}

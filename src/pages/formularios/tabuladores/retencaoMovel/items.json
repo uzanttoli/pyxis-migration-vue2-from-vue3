@@ -1,0 +1,134 @@
+{
+  "motivoContato": [
+    {
+      "text": "Cancelamento",
+      "value": "Cancelamento"
+    },
+    {
+      "text": "Contestação",
+      "value": "Contestação"
+    },
+    {
+      "text": "Informação",
+      "value": "Informação"
+    },
+    {
+      "text": "Migração Controle",
+      "value": "Migração Controle"
+    },
+    {
+      "text": "Migração Pré",
+      "value": "Migração Pré"
+    },
+    {
+      "text": "Reclamação",
+      "value": "Reclamação"
+    },
+    {
+      "text": "Restituição",
+      "value": "Restituição"
+    },
+    {
+      "text": "Troca de Plano",
+      "value": "Troca de Plano"
+    }
+  ],
+  "segmentoCliente": [
+    {
+      "text": "Banda Larga",
+      "value": "Banda Larga"
+    },
+    {
+      "text": "Combo",
+      "value": "Combo"
+    },
+    {
+      "text": "PME",
+      "value": "PME"
+    },
+    {
+      "text": "Pós",
+      "value": "Pós"
+    },
+    {
+      "text": "Pré",
+      "value": "Pré"
+    },
+    {
+      "text": "Controle",
+      "value": "Controle"
+    }
+  ],
+  "contatoClaro": [
+    {
+      "text": "Sim",
+      "value": "Sim"
+    },
+    {
+      "text": "Não",
+      "value": "Não"
+    }
+  ],
+  "reajusteAlteracaoPlano": [
+    {
+      "text": "Sim",
+      "value": "Sim"
+    },
+    {
+      "text": "Não",
+      "value": "Não"
+    }
+  ],
+  "tipoCliente": [
+    {
+      "text": "Dependente",
+      "value": "Dependente"
+    },
+    {
+      "text": "Titular",
+      "value": "Titular"
+    }
+  ],
+  "terminoDesconto": [
+    {
+      "text": "Sim",
+      "value": "Sim"
+    },
+    {
+      "text": "Não",
+      "value": "Não"
+    }
+  ],
+  "migracaoCompulsoria": [
+    {
+      "text": "Sim",
+      "value": "Sim"
+    },
+    {
+      "text": "Não",
+      "value": "Não"
+    }
+  ],
+  "resolucaoAtendimento": [
+    {
+      "text": "Cancelado",
+      "value": "Cancelado"
+    },
+    {
+      "text": "Migrado Controle",
+      "value": "Migrado Controle"
+    },
+    {
+      "text": "Migrado Flex",
+      "value": "Migrado Flex"
+    },
+    {
+      "text": "Migrado Pré",
+      "value": "Migrado Pré"
+    },
+    {
+      "text": "Retido",
+      "value": "Retido"
+    }
+  ]
+}
