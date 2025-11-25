@@ -1,4 +1,5 @@
-import Vue from 'vue'
+// import Vue from 'vue'
+import api from '@/plugins/axios.js'
 import config from '../core/config'
 
 export default {
@@ -25,12 +26,12 @@ export default {
   actions: {
     async loadConfigBackoffice({ commit }, payload) {
       let urlBase = `${config.baseUrl}api/shared/backoffice/config/fila/${payload}`
-      var res = await Vue.prototype.$api.get(urlBase)
+      var res = await api.get(urlBase)
       commit('setConfigBackoffice', res.data)
     },
     loadExecutarAcao({ commit }, payload) {
       let urlBase = `${config.baseUrl}api/shared/backoffice/tratativa/exec_acao`
-      Vue.prototype.$api
+      api
         .get(urlBase, {
           params: {
             filaProcedure: payload.filaProcedure,
@@ -48,7 +49,7 @@ export default {
     },
     agendarAnaliseAction({ commit }, payload) {
       let urlBase = `${config.baseUrl}api/shared/backoffice/tratativa/exec_acao`
-      Vue.prototype.$api
+      api
         .get(urlBase, {
           params: {
             filaProcedure: payload.filaProcedure,
@@ -66,7 +67,7 @@ export default {
     },
     salvarAnaliseAction({ commit }, payload) {
       let urlBase = `${config.baseUrl}api/shared/backoffice/tratativa/salvar_analise/${payload.consulta}/'${payload.dadosTratativa}'`
-      Vue.prototype.$api.get(urlBase).then(() => {
+      api.get(urlBase).then(() => {
         commit('setSalvarAnalise')
       })
     }

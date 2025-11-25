@@ -1,4 +1,5 @@
-import Vue from 'vue'
+// import Vue from 'vue'
+import api from '@/plugins/axios.js'
 import config from '../core/config.js'
 
 export default {
@@ -70,37 +71,37 @@ export default {
   actions: {
     loadListarStatusContato({ commit }) {
       let urlData = `${config.baseUrl}api/shared/formularios/tratativa_bko_ativacao/tentativa_contato/`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setListarStatusContato', res.data)
       })
     },
     loadListarMeses({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/formularios/tratativa_bko_ativacao/meses/${payload.mes}/${payload.ano}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setListarMeses', res.data)
       })
     },
     loadConfigDetalheTratativa({ commit }) {
       let urlData = `${config.baseUrl}api/shared/config/detalhe_produtividade_bko/`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setConfigDetalheTratativa', res.data)
       })
     },
     loadCasosAgendados({ commit }) {
       let urlData = `${config.baseUrl}api/shared/formularios/tratativa_bko_ativacao/casos_agendados/`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setCasosAgendados', res.data)
       })
     },
     loadMinhasAtivacoes({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/formularios/tratativa_bko_ativacao/minha_ativacao_mes/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setMinhasAtivacoes', res.data[0])
       })
     },
     loadListarCoordenadores({ commit }) {
       let urlData = `${config.baseUrl}api/shared/formularios/tratativa_bko_ativacao/coordenadores`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setListarCoordenadores', res.data)
       })
     },
@@ -112,7 +113,7 @@ export default {
       payload.ano ? (urlData += `/${payload.ano}`) : ''
       payload.coordenador ? (urlData += `/${payload.coordenador}`) : ''
 
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setDadosGraficoMotivoMicro', res.data)
       })
     },
@@ -123,59 +124,59 @@ export default {
       payload.mes ? (urlData += `/${payload.mes}`) : ''
       payload.coordenador ? (urlData += `/${payload.coordenador}`) : ''
 
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setDadosGraficoMotivoMacro', res.data)
       })
     },
     loadConfigTratativaBko({ commit }) {
       let urlData = `${config.baseUrl}api/shared/config/produtividade_bko/`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setConfigTratativaBko', res.data)
       })
     },
     loadConsoliadoDia({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/formularios/tratativa_bko_ativacao/meu_consolidado_dia/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setConsoliadoDia', res.data[0])
       })
     },
     loadConsolidadoMes({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/formularios/tratativa_bko_ativacao/meu_consolidado_mes/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setConsolidadoMes', res.data[0])
       })
     },
     async atualizarCasoActions({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/formularios/tratativa_bko_ativacao/operacao_ativacao/` /**modificar api */
       // let urlCompleta = observacao;
-      var res = await Vue.prototype.$api.post(urlData, payload)
+      var res = await api.post(urlData, payload)
       commit('setAtualizarCaso', res.data)
     },
 
     loadCausaMicro({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/formularios/tratativa_bko_ativacao/causa_micro/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setCausaMicro', res.data)
       })
     },
 
     loadCausaMacro({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/formularios/tratativa_bko_ativacao/causa_macro/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setCausaMacro', res.data)
       })
     },
 
     loadCasoAtivo({ commit }) {
       let urlData = `${config.baseUrl}api/shared/formularios/tratativa_bko_ativacao/caso_ativo/`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setCasoAtivo', res.data)
       })
     }
 
     // async loadNovoCasoAtivacao({ commit }, payload) {
     //   let urlData = `${config.baseUrl}api/shared/formularios/tratativa_bko_ativacao/novo_caso/${payload.almope}/${payload.tipo}`;
-    //   let res = await Vue.prototype.$api.get(urlData);
+    //   let res = await api.get(urlData);
     //   commit("setNovoCasoAtivacao", res.data[0]);
     // },
   },

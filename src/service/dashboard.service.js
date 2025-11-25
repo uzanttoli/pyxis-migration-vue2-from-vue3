@@ -1,4 +1,5 @@
-import Vue from 'vue'
+// import Vue from 'vue'
+import api from '@/plugins/axios.js'
 import config from '../core/config'
 
 export default {
@@ -35,7 +36,7 @@ export default {
       let url = `${config.baseUrl}api/shared/abs/campanha/`
 
       if (produto) url += produto
-      await Vue.prototype.$api.get(url).then(res => {
+      await api.get(url).then(res => {
         commit('setAbsCampanha', { campanha: produto, data: res.data })
       })
     }

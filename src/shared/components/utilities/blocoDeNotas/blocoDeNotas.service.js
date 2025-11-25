@@ -1,4 +1,5 @@
-import Vue from 'vue'
+// import Vue from 'vue'
+import api from '@/plugins/axios.js'
 import config from '../../../../core/config'
 
 export default {
@@ -22,7 +23,7 @@ export default {
     async loadTextoBlocoDeNotas({ commit }, almope) {
       let urlData = `${config.baseUrl}api/shared/bloco_de_notas/texto/`
       if (almope) urlData += almope + '/'
-      await Vue.prototype.$api.get(urlData).then(res => {
+      await api.get(urlData).then(res => {
         if (res.data != false) {
           commit('setTextoBlocoDeNotas', res.data.ANOTACOES)
           commit('setIsNotePad', true)
@@ -36,7 +37,7 @@ export default {
           formData.append(key, object[key])
           return formData
         }, new FormData())
-      Vue.prototype.$api.post(urlData, getFormData(payload)).then(() => {
+      api.post(urlData, getFormData(payload)).then(() => {
         commit('setTextoBlocoDeNotas', payload.ANOTACOES)
       })
     },
@@ -47,7 +48,7 @@ export default {
           formData.append(key, object[key])
           return formData
         }, new FormData())
-      await Vue.prototype.$api.post(urlData, getFormData(payload)).then(() => {
+      await api.post(urlData, getFormData(payload)).then(() => {
         commit('setUpdateBlocoDeNotas')
       })
     }

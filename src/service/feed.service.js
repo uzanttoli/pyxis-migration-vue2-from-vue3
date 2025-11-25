@@ -1,5 +1,7 @@
 import config from '../core/config'
-import Vue from 'vue'
+// import Vue from 'vue'
+import api from '@/plugins/axios.js'
+
 export default {
   state: {
     insertFeed: false,
@@ -57,7 +59,7 @@ export default {
           FormData.append(key, object[key])
           return FormData
         }, new FormData())
-      Vue.prototype.$api.post(urlData, getFormData(payload)).then(() => {
+      api.post(urlData, getFormData(payload)).then(() => {
         commit('setFixarPost')
       })
     },
@@ -68,7 +70,7 @@ export default {
           FormData.append(key, object[key])
           return FormData
         }, new FormData())
-      Vue.prototype.$api.post(urlData, getFormData(payload)).then(() => {
+      api.post(urlData, getFormData(payload)).then(() => {
         commit('setDesfixarPost')
       })
     },
@@ -79,7 +81,7 @@ export default {
           FormData.append(key, object[key])
           return FormData
         }, new FormData())
-      Vue.prototype.$api.post(urlData, getFormData(payload)).then(() => {
+      api.post(urlData, getFormData(payload)).then(() => {
         commit('setInativarPost')
       })
     },
@@ -90,7 +92,7 @@ export default {
           FormData.append(key, object[key])
           return FormData
         }, new FormData())
-      Vue.prototype.$api.post(urlData, getFormData(payload)).then(() => {
+      api.post(urlData, getFormData(payload)).then(() => {
         commit('setInsertVisualizacao')
       })
     },
@@ -101,7 +103,7 @@ export default {
           FormData.append(key, object[key])
           return FormData
         }, new FormData())
-      Vue.prototype.$api.post(urlData, getFormData(payload)).then(() => {
+      api.post(urlData, getFormData(payload)).then(() => {
         commit('setUpdateClassificacao')
       })
     },
@@ -112,7 +114,7 @@ export default {
           FormData.append(key, object[key])
           return FormData
         }, new FormData())
-      Vue.prototype.$api.post(urlData, getFormData(payload)).then(() => {
+      api.post(urlData, getFormData(payload)).then(() => {
         commit('setInsertClassificacao')
       })
     },
@@ -123,7 +125,7 @@ export default {
           FormData.append(key, object[key])
           return FormData
         }, new FormData())
-      Vue.prototype.$api.post(urlData, getFormData(payload)).then(() => {
+      api.post(urlData, getFormData(payload)).then(() => {
         commit('setUpdateReacoes')
       })
     },
@@ -134,7 +136,7 @@ export default {
           FormData.append(key, object[key])
           return FormData
         }, new FormData())
-      Vue.prototype.$api.post(urlData, getFormData(payload)).then(() => {
+      api.post(urlData, getFormData(payload)).then(() => {
         commit('setInsertReacoes')
       })
     },
@@ -145,7 +147,7 @@ export default {
           FormData.append(key, object[key])
           return FormData
         }, new FormData())
-      Vue.prototype.$api.post(urlData, getFormData(payload)).then(() => {
+      api.post(urlData, getFormData(payload)).then(() => {
         commit('setInsertComentarios')
       })
     },
@@ -156,7 +158,7 @@ export default {
           FormData.append(key, object[key])
           return FormData
         }, new FormData())
-      Vue.prototype.$api.post(urlData, getFormData(payload)).then(() => {
+      api.post(urlData, getFormData(payload)).then(() => {
         commit('setUpdateStatusComentarios')
       })
     },
@@ -167,7 +169,7 @@ export default {
           FormData.append(key, object[key])
           return FormData
         }, new FormData())
-      Vue.prototype.$api.post(urlData, getFormData(payload)).then(() => {
+      api.post(urlData, getFormData(payload)).then(() => {
         commit('setInsertFeed')
       })
     }

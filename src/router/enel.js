@@ -2,7 +2,7 @@ const rotas = [
   {
     path: '/pyxis/enel/operacoes/operador/dados-online',
     name: 'DadosOnlineOperador',
-    component: () => import('../pages/operacao/enel/operacoes/operador/Operador'),
+    component: () => import('../pages/operacao/enel/operacoes/operador/Operador.vue'),
     meta: {
       title: 'CCO | Dados Online'
     }
@@ -18,7 +18,7 @@ const rotas = [
   {
     path: '/pyxis/enel/operacoes/coordenador/dados-online',
     name: 'DadosOnlineCoordenador',
-    component: () => import('../pages/operacao/enel/operacoes/coordenador/Coordenador'),
+    component: () => import('../pages/operacao/enel/operacoes/coordenador/Coordenador.vue'),
     meta: {
       title: 'CCO | Dados Online'
     }

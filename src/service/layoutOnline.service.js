@@ -1,4 +1,5 @@
-import Vue from 'vue'
+// import Vue from 'vue'
+import api from '@/plugins/axios.js'
 import config from '../core/config'
 
 export default {
@@ -29,7 +30,7 @@ export default {
     async loadAgrupamentosLayoutOnline({ commit }, produto) {
       let urlData = `${config.baseUrl}api/shared/layout_online/agrupamentos/`
       if (produto) urlData += produto + '/'
-      await Vue.prototype.$api.get(urlData).then(res => {
+      await api.get(urlData).then(res => {
         commit('setLayoutOnlineAgrupamentos', res.data)
       })
     },
@@ -40,13 +41,13 @@ export default {
         url += produto + '/'
         if (agrupamento) url += agrupamento + '/'
       }
-      Vue.prototype.$api.get(url).then(res => {
+      api.get(url).then(res => {
         commit('setLayoutOnlineConfig', res.data)
       })
     },
     async loadProdutosLayoutOnline({ dispatch }) {
       let urlData = `${config.baseUrl}api/shared/layout_online/produtos/`
-      await Vue.prototype.$api.get(urlData).then(res => {
+      await api.get(urlData).then(res => {
         let produtos = res.data
         dispatch('setProdutos', produtos, { root: true })
       })

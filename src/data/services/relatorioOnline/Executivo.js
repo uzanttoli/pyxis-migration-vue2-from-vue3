@@ -1,5 +1,6 @@
 import config from '@/core/config'
-import Vue from 'vue'
+// import Vue from 'vue'
+import api from '@/plugins/axios.js'
 
 const ExecutivoService = {
   /**
@@ -11,7 +12,7 @@ const ExecutivoService = {
   async getDadosFarol(regionalSumario, data) {
     try {
       const urlData = `${config.pyxisReceptivoUrl}receptivo/relatorio-online/executivo/farol/`
-      const result = await Vue.prototype.$api.get(urlData, {
+      const result = await api.get(urlData, {
         params: {
           regionalSumario: regionalSumario,
           dataFiltro: data
@@ -27,7 +28,7 @@ const ExecutivoService = {
   async getListarRegionalSumario() {
     try {
       const urlData = `${config.pyxisReceptivoUrl}receptivo/relatorio-online/executivo/regional-sumario/`
-      const result = await Vue.prototype.$api.get(urlData)
+      const result = await api.get(urlData)
       return result.data
     } catch (error) {
       console.error(error)

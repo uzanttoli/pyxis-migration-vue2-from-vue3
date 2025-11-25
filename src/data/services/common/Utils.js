@@ -1,6 +1,6 @@
 import config from '../../../core/config'
+import api from '@/plugins/axios.js'
 // import axios from 'axios'
-import Vue from 'vue'
 
 const Utils = {
   monthFilter(qdteMonth = 12, year) {
@@ -72,7 +72,7 @@ const Utils = {
   async getProductAvailable(relatorio, perfil, almope) {
     try {
       const urlData = `${config.baseUrl}api/shared/produtos/listar`
-      const res = await Vue.prototype.$api.get(urlData, {
+      const res = await api.get(urlData, {
         params: {
           relatorio,
           perfil,
@@ -95,7 +95,7 @@ const Utils = {
   async getAlmopes(almopes) {
     try {
       const url = `${config.baseUrl}api/shared/pyxis/perfis_ativos`
-      const res = await Vue.prototype.$api.get(url, {
+      const res = await api.get(url, {
         params: {
           almopes: almopes
         }
@@ -109,7 +109,7 @@ const Utils = {
   async getListSkillSummaryBasic(produto) {
     try {
       const url = `${config.baseUrl}api/shared/utils/summary_skill/listar`
-      const res = await Vue.prototype.$api.get(url, {
+      const res = await api.get(url, {
         params: {
           produto
         }

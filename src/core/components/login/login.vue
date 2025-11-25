@@ -8,12 +8,12 @@
     <quem-somos></quem-somos>
     <footer-login></footer-login>
     <!-- <btn-login class="btn2" @clickMe="login = !login"></btn-login> -->
-    <card-login :abrirLogin="login" @update:resetPassword="useResetPassword"></card-login>
-
-    <reset-password
+    <!-- <card-login :abrirLogin="login" @update:resetPassword="useResetPassword"></card-login> -->
+    <CardLogin v-model:abrirLogin="login" />
+    <!-- <reset-password
       :dialogReset="dialogReset"
       @update:close-reset="dialogReset = !dialogReset"
-    ></reset-password>
+    ></reset-password> -->
   </v-card>
 </template>
 
@@ -26,7 +26,7 @@
   import FooterLogin from './footerLogin.vue'
   import Pyxis from './pyxis.vue'
   import QuemSomos from './quemSomos.vue'
-  import ResetPassword from './resetPassword.vue'
+  // import ResetPassword from './resetPassword.vue'
   import Sobre from './sobre.vue'
 
   export default {
@@ -39,8 +39,8 @@
       QuemSomos,
       // BtnLogin,
       CardLogin,
-      FooterLogin,
-      ResetPassword
+      FooterLogin
+      // ResetPassword
     },
     data: () => ({
       login: false,

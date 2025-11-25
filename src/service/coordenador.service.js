@@ -1,5 +1,6 @@
 import config from '../core/config'
-import Vue from 'vue'
+// import Vue from 'vue'
+import api from '@/plugins/axios.js'
 
 export default {
   state: {
@@ -97,133 +98,133 @@ export default {
   actions: {
     loadIntervaloMplay({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/mplay/intervalos_mplay/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setIntervaloMplay', res.data)
       })
     },
     loadPausasPorCoordenador({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/pausas/pausas_coordenador/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setPausasPorCoordenador', res.data)
       })
     },
     loadQuantidadeOperadoresLogadosCoordenador({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/coordenador/qtd_operadores_logados/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setQuantidadeOperadoresLogadosCoordenador', res.data)
       })
     },
     loadTempoLogadoPorCoordenador({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/coordenador/tempo_logado_coordenador/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setTempoLogadoPorCoordenador', res.data)
       })
     },
     loadResumoIndicadoresOnlineCoordenador({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/coordenador/resumo_indicadores_online_coordenador/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setResumoIndicadoresOnlineCoordenador', res.data)
       })
     },
     loadTransferenciaDowngradeIndevidasPorCoordenador({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/extrato_net/transferencia_downgrade_indevida_coordenador/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setTransferenciaDowngradeIndevidasPorCoordenador', res.data)
       })
     },
     loadTransferenciaDowngradePorCoordenador({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/extrato_net/transferencia_downgrade_coordenador/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setTransferenciaDowngradePorCoordenador', res.data)
       })
     },
     loadTransferenciaMudancaDeEnderecoIndevidaPorCoordenador({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/extrato_net/transferencia_mudanca_endereco_indevida_coordenador/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setTransferenciaMudancaDeEnderecoIndevidaPorCoordenador', res.data)
       })
     },
     loadTransferenciaMudancaDeEnderecoPorCoordenador({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/extrato_net/transferencia_mudanca_endereco_coordenador/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setTransferenciaMudancaDeEnderecoPorCoordenador', res.data)
       })
     },
     loadTransferenciaLinhaMudaIndevidaPorCoordenador({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/extrato_net/transferencia_linha_muda_indevida_coordenador/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setTransferenciaLinhaMudaIndevidaPorCoordenador', res.data)
       })
     },
     loadTransferenciaLinhaMudaPorCoordenador({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/extrato_net/transferencia_linha_muda_por_coordenador/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setTransferenciaLinhaMudaPorCoordenador', res.data)
       })
     },
     loadTransferenciaRetencaoIndevidaPorCoordenador({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/extrato_net/transferencia_retencao_indevida_por_coordenador/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setTransferenciaRetencaoIndevidaPorCoordenador', res.data)
       })
     },
     loadTransferenciaRetencaoPorCoordenador({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/extrato_net/transferencia_retencao_por_coordenador/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setTransferenciaRetencaoPorCoordenador', res.data)
       })
     },
     loadTransferenciaParaSupervisorPorCoordenador({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/extrato_net/transferencias_para_supervisor_por_coordenador/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setTransferenciaParaSupervisorPorCoordenador', res.data)
       })
     },
     loadTransferenciasTotaisCoordenador({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/extrato_net/transferencias_totais_coordenador/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setTransferenciasTotaisCoordenador', res.data)
       })
     },
     loadShortcall30PorCoordenador({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/extrato_net/shortcall30_por_coordenador/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setShortcall30PorCoordenador', res.data)
       })
     },
     loadShortcall60PorCoordenador({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/extrato_net/shortcall60_por_coordenador/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setShortcall60PorCoordenador', res.data)
       })
     },
     loadDesconexaoPorCoordenador({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/extrato_net/desconexao_por_coordenador/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setDesconexaoPorCoordenador', res.data)
       })
     },
     loadRechamadaDiaCoordenador({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/extrato_net/extrato_rechamada_dia_coordenador/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setRechamadaDiaCoordenador', res.data)
       })
     },
     loadRechamada60minCoordenador({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/extrato_net/rechamada_60min_coordenador/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setRechamada60minCoordenador', res.data)
       })
     },
     loadChamadasCoordenador({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/extrato_net/chamadas_coordenador/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setChamadasCoordenador', res.data)
       })
     },
     loadOperadoresLogadosPorCoordenador({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/registro_log_pyxis/coordenador/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setOperadoresLogadosPorCoordenador', res.data)
       })
     }

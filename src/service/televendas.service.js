@@ -1,4 +1,5 @@
-import Vue from 'vue'
+// import Vue from 'vue'
+import api from '@/plugins/axios.js'
 import config from '@/core/config'
 
 export default {
@@ -45,7 +46,7 @@ export default {
   actions: {
     loadSubmotivosFormVenda({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/televendas/submotivos_venda/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setSubmotivosFormVenda', res.data)
       })
     },
@@ -56,12 +57,12 @@ export default {
           formData.append(key, object[key])
           return formData
         }, new FormData())
-      await Vue.prototype.$api.post(urlData, getFormData(payload)).then(() => {
+      await api.post(urlData, getFormData(payload)).then(() => {
         commit('setInserirVendasNet')
       })
     },
     loadDadosPorAlmope({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}api/shared/televendas/dados_por_almope/${payload}`)
         .then(res => {
           commit('setDadosPorAlmope', res.data)
@@ -71,36 +72,36 @@ export default {
       payload = payload == 1 ? 'CLIENTE_ELEGIVEL' : 'MOTIVO_NAO_ACEITE'
       let urlData = `${config.baseUrl}api/shared/televendas/dados_campo/${payload}`
       // let urlData = `${config.baseUrl}api/shared/televendas/motivos_venda/${payload}`;
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setMotivoFormVenda', res.data)
       })
     },
     loadTipoFormVenda({ commit }) {
-      Vue.prototype.$api.get(`${config.baseUrl}api/shared/televendas/tipo_venda/`).then(res => {
+      api.get(`${config.baseUrl}api/shared/televendas/tipo_venda/`).then(res => {
         commit('setTipoFormVenda', res.data)
       })
     },
     loadProdutoFormVenda({ commit }) {
-      Vue.prototype.$api.get(`${config.baseUrl}api/shared/televendas/produto_venda/`).then(res => {
+      api.get(`${config.baseUrl}api/shared/televendas/produto_venda/`).then(res => {
         commit('setProdutoFormVenda', res.data)
       })
     },
     loadMotivosClaroNaoVendeu({ commit }) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}api/shared/televendas/claro_nao_vendeu/`)
         .then(res => {
           commit('setMotivosClaroNaoVendeu', res.data)
         })
     },
     loadOperadorasConcorrentes({ commit }) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}api/shared/televendas/operadoras_concorrentes/`)
         .then(res => {
           commit('setOperadorasConcorrentes', res.data)
         })
     },
     loadProdutosVendaClaro({ commit }) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}api/shared/televendas/produtos_venda_claro/`)
         .then(res => {
           commit('setProdutosVendaClaro', res.data)

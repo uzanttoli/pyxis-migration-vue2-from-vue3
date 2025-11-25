@@ -1,4 +1,5 @@
-import Vue from 'vue'
+// import Vue from 'vue'
+import api from '@/plugins/axios.js'
 import config from '@/core/config'
 
 const HumorService = {
@@ -10,7 +11,7 @@ const HumorService = {
   async salvarDadosHumor(obj) {
     try {
       const urlData = `${config.pyxisReceptivoUrl}receptivo/pesquisa/humor`
-      await Vue.prototype.$api.post(urlData, obj)
+      await api.post(urlData, obj)
     } catch (e) {
       console.error(e)
       throw e
@@ -25,7 +26,7 @@ const HumorService = {
   async validarPesquisaHumorUsuario(almope) {
     try {
       const urlData = `${config.pyxisReceptivoUrl}receptivo/pesquisa/humor`
-      const result = await Vue.prototype.$api.get(urlData, {
+      const result = await api.get(urlData, {
         params: {
           almope: almope
         }
@@ -46,7 +47,7 @@ const HumorService = {
   async atualizarPesquisaHumor(obj) {
     try {
       const urlData = `${config.pyxisReceptivoUrl}receptivo/pesquisa/humor`
-      await Vue.prototype.$api.put(urlData, obj)
+      await api.put(urlData, obj)
     } catch (e) {
       console.error(e)
       throw e
@@ -61,7 +62,7 @@ const HumorService = {
   async getMeuHumor(almope) {
     try {
       const urlData = `${config.pyxisReceptivoUrl}receptivo/pesquisa/humor/meu-humor`
-      const res = await Vue.prototype.$api.get(urlData, {
+      const res = await api.get(urlData, {
         params: {
           almope: almope
         }

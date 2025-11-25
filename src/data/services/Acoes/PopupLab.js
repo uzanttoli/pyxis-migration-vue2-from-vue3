@@ -1,11 +1,12 @@
-import Vue from 'vue'
+// import Vue from 'vue'
+import api from '@/plugins/axios.js'
 import config from '@/core/config'
 
 const PopupLabService = {
   async getListarRotasDisponiveis() {
     try {
       const urlData = `${config.pyxisReceptivoUrl}receptivo/acoes/popuplab/listar-views`
-      const res = await Vue.prototype.$api.get(urlData)
+      const res = await api.get(urlData)
       return res.data
     } catch (error) {
       console.error(error)
@@ -20,7 +21,7 @@ const PopupLabService = {
   async getListarRegionais(produto, idRota) {
     try {
       const urlData = `${config.pyxisReceptivoUrl}receptivo/acoes/popuplab/listar-regionais`
-      const res = await Vue.prototype.$api.get(urlData, {
+      const res = await api.get(urlData, {
         params: {
           produto: produto,
           idRota: idRota
@@ -41,7 +42,7 @@ const PopupLabService = {
   async criarPopup(criarPopup) {
     try {
       const urlData = `${config.pyxisReceptivoUrl}receptivo/acoes/popuplab/criar`
-      await Vue.prototype.$api.post(urlData, {
+      await api.post(urlData, {
         Titulo: criarPopup.Titulo,
         Produto: criarPopup.Produto,
         Id_Menu_Rota: criarPopup.Id_Menu_Rota,
@@ -63,7 +64,7 @@ const PopupLabService = {
   async atualizarDadosPopup(atualizarPopup) {
     try {
       const urlData = `${config.pyxisReceptivoUrl}receptivo/acoes/popuplab/popup-atualizar-dados`
-      await Vue.prototype.$api.post(urlData, atualizarPopup)
+      await api.post(urlData, atualizarPopup)
     } catch (error) {
       console.error(error)
       throw error
@@ -78,7 +79,7 @@ const PopupLabService = {
   async getListarPopupDisponiveis(almope, regional, produto, rotaAcessada) {
     try {
       const urlData = `${config.pyxisReceptivoUrl}receptivo/acoes/popuplab/popup-lab-disponiveis`
-      const result = await Vue.prototype.$api.get(urlData, {
+      const result = await api.get(urlData, {
         params: {
           almope: almope,
           regional: regional,
@@ -102,7 +103,7 @@ const PopupLabService = {
   async getListarTodosPopups(produto, tipoPerfil) {
     try {
       const urlData = `${config.pyxisReceptivoUrl}receptivo/acoes/popuplab/popup-config`
-      const result = await Vue.prototype.$api.get(urlData, {
+      const result = await api.get(urlData, {
         params: {
           produto: produto,
           tipoPerfil: tipoPerfil

@@ -5,75 +5,72 @@
       <div class="container-img">
         <img src="../../../assets/img/core/security.png" alt="" />
       </div>
-      <validation-observer ref="observer" v-slot="{ invalid }">
+      <!-- <validation-observer ref="observer" v-slot="{ invalid }"> -->
         <form @submit.prevent="submit">
           <div class="field-form">
-            <ValidationProvider
+            <!-- <ValidationProvider
               rules="required|numeric|min:7|max:7"
               v-slot="{ errors }"
               name="almope"
-            >
+            > -->
               <v-text-field
                 class="mx-2"
                 dense
                 outlined
                 placeholder="Almope"
                 v-mask="[masks.almope]"
-                :error-messages="errors"
                 required
                 v-model="formReset.almope"
                 prepend-inner-icon="fa-solid fa-user"
               ></v-text-field>
-            </ValidationProvider>
-            <ValidationProvider
+            <!-- </ValidationProvider> -->
+            <!-- <ValidationProvider
               rules="required|date_format:dd/MM/yyyy"
               v-slot="{ errors }"
               name="Data Nascimento"
-            >
+            > -->
               <v-text-field
                 class="mx-2"
                 dense
                 outlined
                 v-mask="[masks.data]"
-                :error-messages="errors"
                 placeholder="Data Nascimento"
                 v-model="formReset.dataNascimento"
                 required
                 prepend-inner-icon="fa-solid fa-calendar-days"
               ></v-text-field>
-            </ValidationProvider>
-            <ValidationProvider v-slot="{ errors }" name="Nova Senha" rules="required|min:8">
+            <!-- </ValidationProvider> -->
+            <!-- <ValidationProvider v-slot="{ errors }" name="Nova Senha" rules="required|min:8"> -->
               <v-text-field
                 class="mx-2"
                 dense
                 outlined
-                :error-messages="errors"
                 placeholder="Nova Senha"
                 v-model="formReset.novaSenha"
                 required
                 prepend-inner-icon="fa-solid fa-lock"
               ></v-text-field>
-            </ValidationProvider>
+            <!-- </ValidationProvider> -->
           </div>
           <v-col cols="pa-0 ma-0">
             <v-row class="mb-2 mt-n3" style="margin: 0 1px 0 1px">
-              <v-btn type="submit" :disabled="invalid" block depressed color="success">
+              <v-btn type="submit" block depressed color="success">
                 Alterar
               </v-btn>
             </v-row>
           </v-col>
         </form>
-      </validation-observer>
+      <!-- </validation-observer> -->
     </v-card>
   </v-dialog>
 </template>
 <script>
-  import { ValidationObserver, ValidationProvider } from 'vee-validate'
+  // import { ValidationObserver, ValidationProvider } from 'vee-validate'
   import Masks from '../../../shared/masks/masks'
   import axios from 'axios'
   import alerts from '../../../mixins/alerts.mixins'
   export default {
-    components: { ValidationObserver, ValidationProvider },
+    // components: { ValidationObserver, ValidationProvider },
     props: {
       dialogReset: {
         type: Boolean,

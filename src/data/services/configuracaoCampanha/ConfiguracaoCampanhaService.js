@@ -1,4 +1,5 @@
-import Vue from 'vue'
+// import Vue from 'vue'
+import api from '@/plugins/axios.js'
 import config from '../../../core/config.js'
 
 const ConfiguracaoCampanhaService = {
@@ -10,7 +11,7 @@ const ConfiguracaoCampanhaService = {
   async getAll() {
     try {
       const urlData = `${config.pyxisReceptivoUrl}receptivo/configuracao-campanha/listar`
-      const res = await Vue.prototype.$api.get(urlData)
+      const res = await api.get(urlData)
       return res.data
     } catch (error) {
       console.error('Erro ao recuperar itens de configuração de campanha:', error)
@@ -27,7 +28,7 @@ const ConfiguracaoCampanhaService = {
   async getById(id) {
     try {
       const urlData = `${config.pyxisReceptivoUrl}receptivo/configuracao-campanha/${id}`
-      const res = await Vue.prototype.$api.get(urlData)
+      const res = await api.get(urlData)
       return res.data
     } catch (error) {
       console.error('Erro ao recuperar item de configuração de campanha pelo ID:', error)
@@ -44,7 +45,7 @@ const ConfiguracaoCampanhaService = {
   async create(data) {
     try {
       const urlData = `${config.pyxisReceptivoUrl}receptivo/configuracao-campanha/novo`
-      const res = await Vue.prototype.$api.post(urlData, data)
+      const res = await api.post(urlData, data)
       return res.data
     } catch (error) {
       console.error('Erro ao criar item de configuração de campanha:', error)
@@ -62,7 +63,7 @@ const ConfiguracaoCampanhaService = {
   async update(id, data) {
     try {
       const urlData = `${config.pyxisReceptivoUrl}receptivo/configuracao-campanha/editar/${id}`
-      const res = await Vue.prototype.$api.put(urlData, data)
+      const res = await api.put(urlData, data)
       return res.data
     } catch (error) {
       console.error('Erro ao atualizar item de configuração de campanha:', error)
@@ -79,7 +80,7 @@ const ConfiguracaoCampanhaService = {
   async delete(id) {
     try {
       const urlData = `${config.pyxisReceptivoUrl}receptivo/configuracao-campanha/delete/${id}`
-      const res = await Vue.prototype.$api.delete(urlData)
+      const res = await api.delete(urlData)
       return res.data
     } catch (error) {
       console.error('Erro ao excluir item de configuração de campanha:', error)

@@ -1,4 +1,5 @@
-import Vue from 'vue'
+// import Vue from 'vue'
+import api from '@/plugins/axios.js'
 import { createRouter, createWebHistory } from 'vue-router'
 
 import config from '../core/config'
@@ -10,8 +11,8 @@ import routersEnel from './enel'
 import MenuService from '@/data/services/menu/MenuService'
 import Swal from 'sweetalert2/dist/sweetalert2'
 
-import { PopupLabService } from '@/data/services/Acoes'
-import { mostrarPopup } from '@/pages/acoes/popupLab/popupService'
+// import { PopupLabService } from '@/data/services/Acoes'
+// import { mostrarPopup } from '@/pages/acoes/popupLab/popupService'
 //
 // Vue.use(VueRouter)
 
@@ -19,7 +20,7 @@ const routes = [...routersNet, ...routersEnel]
 
 const router = createRouter({
   history: createWebHistory(),
-  base: process.env.BASE_URL,
+  base: import.meta.env.BASE_URL ?? '/',
   routes,
   ignoreDuplicateNavigation: true
 })
@@ -65,22 +66,22 @@ router.beforeEach(async (to, from, next) => {
   next()
 
   // Configuração do popupdinamico
-  const usuario = store.getters.usuario
-  const res = await PopupLabService.getListarPopupDisponiveis(
-    usuario.almope,
-    usuario.regional,
-    usuario.produto,
-    to.path
-  )
+  // const usuario = store.getters.usuario
+  // const res = await PopupLabService.getListarPopupDisponiveis(
+  //   usuario.almope,
+  //   usuario.regional,
+  //   usuario.produto,
+  //   to.path
+  // )
 
-  if (res != '') {
-    for (let result of res) {
-      mostrarPopup({
-        titulo: res && result.TITULO,
-        arquivo: res && result.ARQUIVO_POPUP
-      })
-    }
-  }
+  // if (res != '') {
+  //   for (let result of res) {
+  //     mostrarPopup({
+  //       titulo: res && result.TITULO,
+  //       arquivo: res && result.ARQUIVO_POPUP
+  //     })
+  //   }
+  // }
 })
 
 router.beforeResolve((to, from, next) => {
@@ -92,7 +93,7 @@ router.beforeResolve((to, from, next) => {
         return formData
       }, new FormData())
     if (store.getters.usuario.almope) {
-      Vue.prototype.$api.post(
+      api.post(
         urlData,
         setFormData({
           ALMOPE: JSON.parse(localStorage.getItem('usuario')).almope,

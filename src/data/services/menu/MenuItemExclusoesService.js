@@ -1,4 +1,5 @@
-import Vue from 'vue'
+// import Vue from 'vue'
+import api from '@/plugins/axios.js'
 import config from '../../../core/config.js'
 
 const MenuItemExclusoesService = {
@@ -10,7 +11,7 @@ const MenuItemExclusoesService = {
   async getByRotaId(id) {
     try {
       const urlData = `${config.pyxisReceptivoUrl}receptivo/menu/exclusoes/listar/${id}`
-      const res = await Vue.prototype.$api.get(urlData)
+      const res = await api.get(urlData)
       return res.data
     } catch (error) {
       console.error('Erro ao recuperar exclusões pelo ID da rota:', error)
@@ -26,7 +27,7 @@ const MenuItemExclusoesService = {
   async create(data) {
     try {
       const urlData = `${config.pyxisReceptivoUrl}receptivo/menu/exclusoes/nova`
-      const res = await Vue.prototype.$api.post(urlData, data)
+      const res = await api.post(urlData, data)
       return res.data
     } catch (error) {
       console.error('Erro ao criar exclusão de menu:', error)
@@ -43,7 +44,7 @@ const MenuItemExclusoesService = {
     try {
       const urlData = `${config.pyxisReceptivoUrl}receptivo/menu/exclusoes/delete/${idRota}`
       // O controller espera POST para delete
-      await Vue.prototype.$api.delete(urlData)
+      await api.delete(urlData)
     } catch (error) {
       console.error('Erro ao excluir exclusão de menu:', error)
       throw error

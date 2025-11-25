@@ -1,4 +1,5 @@
-import Vue from 'vue'
+// import Vue from 'vue'
+import api from '@/plugins/axios.js'
 import config from '../core/config'
 
 export default {
@@ -21,13 +22,13 @@ export default {
   actions: {
     loadListNotificationMessages({ commit }, payload) {
       let urlData = `${config.baseUrl}api/mysql/chat/contact/list_notification_msg/${payload}`
-      Vue.prototype.$api.get(urlData).then(result => {
+      api.get(urlData).then(result => {
         commit('setListNotificationMessages', result.data)
       })
     },
     loadListMyGroup({ commit }, payload) {
       let urlData = `${config.baseUrl}api/mysql/chat/contact/list_groups_users_participate/${payload}`
-      Vue.prototype.$api.get(urlData).then(result => {
+      api.get(urlData).then(result => {
         commit('setListMyGroup', result.data)
       })
     },

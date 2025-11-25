@@ -1,4 +1,5 @@
-import Vue from 'vue'
+// import Vue from 'vue'
+import api from '@/plugins/axios.js'
 import config from '../core/config.js'
 
 const link = 'api/shared/user/turno/'
@@ -15,7 +16,7 @@ export default {
   actions: {
     loadTurno({ commit }, almope) {
       let urlData = `${config.baseUrl}${link}${almope}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setTurno', res.data[0])
       })
     }

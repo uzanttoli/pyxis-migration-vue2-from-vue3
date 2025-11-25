@@ -1,5 +1,6 @@
 import config from '../core/config'
-import Vue from 'vue'
+// import Vue from 'vue'
+import api from '@/plugins/axios.js'
 
 export default {
   state: {
@@ -12,7 +13,7 @@ export default {
   },
   actions: {
     loadResumoOperador({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(
           `${config.baseUrl}api/shared/supervisor/base_resumo_operador/${payload.nome}/${payload.tipo}`
         )

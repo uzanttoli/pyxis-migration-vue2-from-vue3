@@ -1,4 +1,5 @@
-import Vue from 'vue'
+// import Vue from 'vue'
+import api from '@/plugins/axios.js'
 import config from '../core/config'
 
 export default {
@@ -72,112 +73,112 @@ export default {
   },
   actions: {
     loadTransferenciaParaSupervisorPorOperadorExtratoNet({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}api/shared/extrato_net/transferencia_supervisor_operador/${payload}`)
         .then(res => {
           commit('setTransferenciaParaSupervisorPorOperadorExtratoNet', res.data)
         })
     },
     loadTransferenciaTotalOperadorExtratoNet({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}api/shared/extrato_net/transferencia_total_operador/${payload}`)
         .then(res => {
           commit('setTransferenciaTotalOperadorExtratoNet', res.data)
         })
     },
     // loadShortcall30OperadorExtratoNet({ commit }, payload) {
-    //   Vue.prototype.$api
+    //   api
     //     .get(`${config.baseUrl}api/shared/extrato_net/shortcall30_operador/${payload}`)
     //     .then((res) => {
     //       commit("setShortcall30OperadorExtratoNet", res.data);
     //     });
     // },
     loadDesconexaoOperadorExtratoNet({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}api/shared/extrato_net/desconexao_operador/${payload}`)
         .then(res => {
           commit('setDesconexaoOperadorExtratoNet', res.data)
         })
     },
     loadChamadasAtendidasExtratoNet({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}api/shared/extrato_net/chamadas_atendidas/${payload}`)
         .then(res => {
           commit('setChamadasAtendidasExtratoNet', res.data)
         })
     },
     loadRechamada60ExtratoNet({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}api/shared/extrato_net/rechamada/${payload}`)
         .then(res => {
           commit('setRechamada60ExtratoNet', res.data)
         })
     },
     loadRechamadaDiaExtratoNet({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}api/shared/extrato_net/rechamada_dia/${payload}`)
         .then(res => {
           commit('setRechamadaDiaExtratoNet', res.data)
         })
     },
     loadShortcall60ExtratoNet({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}api/shared/extrato_net/shortcall_60/${payload}`)
         .then(res => {
           commit('setShortcall60ExtratoNet', res.data)
         })
     },
     loadTransferenciaRetencaoExtratoNet({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}api/shared/extrato_net/transferencia_retencao/${payload}`)
         .then(res => {
           commit('setTransferenciaRetencaoExtratoNet', res.data)
         })
     },
     loadTransferenciaRetencaoIndevidaExtratoNet({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}api/shared/extrato_net/transferencia_retencao_indevida/${payload}`)
         .then(res => {
           commit('setTransferenciaRetencaoIndevidaExtratoNet', res.data)
         })
     },
     loadTransferenciaMudaExtratoNet({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}api/shared/extrato_net/transferencia_muda/${payload}`)
         .then(res => {
           commit('setTransferenciaMudaExtratoNet', res.data)
         })
     },
     loadTransferenciaMudaIndevidaExtratoNet({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}api/shared/extrato_net/transferencia_muda_indevida/${payload}`)
         .then(res => {
           commit('setTransferenciaMudaIndevidaExtratoNet', res.data)
         })
     },
     loadTransferenciaDowngradeExtratoNet({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}api/shared/extrato_net/transferencia_downgrade/${payload}`)
         .then(res => {
           commit('setTransferenciaDowngradeExtratoNet', res.data)
         })
     },
     loadTransferenciaDowngradeIndevidaExtratoNet({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}api/shared/extrato_net/transferencia_downgrade_indevida/${payload}`)
         .then(res => {
           commit('setTransferenciaDowngradeIndevidaExtratoNet', res.data)
         })
     },
     loadTransferenciaMudancaDeEnderecoExtratoNet({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}api/shared/extrato_net/transferencia_mudanca_endereco/${payload}`)
         .then(res => {
           commit('setTransferenciaMudancaDeEnderecoExtratoNet', res.data)
         })
     },
     loadTransferenciaMudancaDeEnderecoIndevidaExtratoNet({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(
           `${config.baseUrl}api/shared/extrato_net/transferencia_mudanca_endereco_indevida/${payload}`
         )

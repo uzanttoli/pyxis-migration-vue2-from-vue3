@@ -1,4 +1,5 @@
-import Vue from 'vue'
+// import Vue from 'vue'
+import api from '@/plugins/axios.js'
 import config from '../core/config'
 
 export default {
@@ -16,11 +17,9 @@ export default {
   },
   actions: {
     loadMeusFeedbacks({ commit }, payload) {
-      Vue.prototype.$api
-        .get(`${config.baseUrl}api/shared/indicadores/feedback/pendentes/${payload}`)
-        .then(res => {
-          commit('setMeusFeedbacks', res.data)
-        })
+      api.get(`${config.baseUrl}api/shared/indicadores/feedback/pendentes/${payload}`).then(res => {
+        commit('setMeusFeedbacks', res.data)
+      })
     },
     updateDataFormFeedback({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/indicadores/feedback/update/`
@@ -29,7 +28,7 @@ export default {
           formData.append(key, object[key])
           return formData
         }, new FormData())
-      Vue.prototype.$api.post(urlData, getFormData(payload)).then(() => {
+      api.post(urlData, getFormData(payload)).then(() => {
         commit('setUpdateStatusFeedback')
       })
     }

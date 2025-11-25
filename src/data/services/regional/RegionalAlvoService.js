@@ -1,4 +1,4 @@
-import Vue from 'vue'
+import api from '@/plugins/axios.js'
 import config from '../../../core/config.js'
 
 const RegionalAlvoService = {
@@ -10,7 +10,7 @@ const RegionalAlvoService = {
   async getAll() {
     try {
       const urlData = `${config.pyxisReceptivoUrl}receptivo/regional-alvo/listar`
-      const res = await Vue.prototype.$api.get(urlData)
+      const res = await api.get(urlData)
       return res.data
     } catch (error) {
       console.error('Erro ao recuperar as regionais:', error)

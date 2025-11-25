@@ -1,5 +1,6 @@
 import config from '@/core/config'
-import Vue from 'vue'
+// import Vue from 'vue'
+import api from '@/plugins/axios.js'
 
 const OcupacaoService = {
   /**
@@ -10,7 +11,7 @@ const OcupacaoService = {
   async getGroupingProduct(produto, indicador) {
     try {
       const urlData = `${config.baseUrl}api/shared/ocupacao/agrupamentos`
-      const res = await Vue.prototype.$api.get(urlData, {
+      const res = await api.get(urlData, {
         params: {
           produto,
           indicador
@@ -37,7 +38,7 @@ const OcupacaoService = {
   async getConfigReportOccupation(agrupamento, indicador, produto) {
     try {
       const urlData = `${config.baseUrl}api/shared/ocupacao/config_ocupacao`
-      const res = await Vue.prototype.$api.get(urlData, {
+      const res = await api.get(urlData, {
         params: {
           agrupamento,
           indicador,
@@ -54,7 +55,7 @@ const OcupacaoService = {
   async getGroupProduct(produto) {
     try {
       const urlData = `${config.baseUrl}api/shared/ocupacao/grupo`
-      const res = await Vue.prototype.$api.get(urlData, {
+      const res = await api.get(urlData, {
         params: {
           produto
         }

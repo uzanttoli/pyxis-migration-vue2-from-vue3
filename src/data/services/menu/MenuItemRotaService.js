@@ -1,4 +1,5 @@
-import Vue from 'vue'
+// import Vue from 'vue'
+import api from '@/plugins/axios.js'
 import config from '../../../core/config.js'
 
 const MenuItemRotaService = {
@@ -10,7 +11,7 @@ const MenuItemRotaService = {
   async getAll() {
     try {
       const urlData = `${config.pyxisReceptivoUrl}receptivo/menu/rota/listar`
-      const res = await Vue.prototype.$api.get(urlData)
+      const res = await api.get(urlData)
       return res.data
     } catch (error) {
       console.error('Erro ao recuperar itens de rota de menu:', error)
@@ -27,7 +28,7 @@ const MenuItemRotaService = {
   async getById(id) {
     try {
       const urlData = `${config.pyxisReceptivoUrl}receptivo/menu/rota/${id}`
-      const res = await Vue.prototype.$api.get(urlData)
+      const res = await api.get(urlData)
       return res.data
     } catch (error) {
       console.error('Erro ao recuperar item de rota de menu pelo ID:', error)
@@ -44,7 +45,7 @@ const MenuItemRotaService = {
   async create(data) {
     try {
       const urlData = `${config.pyxisReceptivoUrl}receptivo/menu/rota/novo`
-      const res = await Vue.prototype.$api.post(urlData, data)
+      const res = await api.post(urlData, data)
       return res.data
     } catch (error) {
       console.error('Erro ao criar item de rota de menu:', error)
@@ -62,7 +63,7 @@ const MenuItemRotaService = {
   async update(id, data) {
     try {
       const urlData = `${config.pyxisReceptivoUrl}receptivo/menu/rota/editar/${id}`
-      const res = await Vue.prototype.$api.put(urlData, data)
+      const res = await api.put(urlData, data)
       return res.data
     } catch (error) {
       console.error('Erro ao atualizar item de rota de menu:', error)
@@ -79,7 +80,7 @@ const MenuItemRotaService = {
   async delete(id) {
     try {
       const urlData = `${config.pyxisReceptivoUrl}receptivo/menu/rota/delete/${id}`
-      const res = await Vue.prototype.$api.delete(urlData)
+      const res = await api.delete(urlData)
       return res.data
     } catch (error) {
       console.error('Erro ao excluir item de rota de menu:', error)
@@ -89,7 +90,7 @@ const MenuItemRotaService = {
   async ToggleStatus(id, data) {
     try {
       const urlData = `${config.pyxisReceptivoUrl}receptivo/menu/rota/toggle-status/${id}`
-      const res = await Vue.prototype.$api.patch(urlData, data)
+      const res = await api.patch(urlData, data)
       return res.data
     } catch (error) {
       console.error('Erro ao atualizar o status:', error)

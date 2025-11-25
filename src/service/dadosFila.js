@@ -1,4 +1,5 @@
-import Vue from 'vue'
+// import Vue from 'vue'
+import api from '@/plugins/axios.js'
 import config from '../core/config'
 
 export default {
@@ -16,12 +17,12 @@ export default {
   },
   actions: {
     loadDadosFila({ commit }, payload) {
-      Vue.prototype.$api.get(`${config.baseUrl}api/shared/fila/skill/${payload}`).then(res => {
+      api.get(`${config.baseUrl}api/shared/fila/skill/${payload}`).then(res => {
         commit('setDadosFila', res.data)
       })
     },
     loadDacDescricao({ commit }) {
-      Vue.prototype.$api.get(`${config.baseUrl}api/shared/tmt/dac_descricao`).then(res => {
+      api.get(`${config.baseUrl}api/shared/tmt/dac_descricao`).then(res => {
         commit('setDacDescricao', res.data)
       })
     }

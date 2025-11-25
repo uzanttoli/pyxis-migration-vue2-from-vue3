@@ -1,4 +1,5 @@
-import Vue from 'vue'
+// import Vue from 'vue'
+import api from '@/plugins/axios.js'
 import config from '../core/config'
 
 export default {
@@ -41,12 +42,12 @@ export default {
   actions: {
     loadMinhaEvolucao({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/operador/minhaEvolucao/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setMinhaEvolucao', res.data)
       })
     },
     loadMeusIndicadores({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(
           `${config.pyxisReceptivoUrl}receptivo/dados-online/meus-indicadores/operador?almope=${payload}`
         )
@@ -59,35 +60,35 @@ export default {
       // });
     },
     loadMeuResultado({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}api/shared/operador/meus_resultados/${payload}`)
         .then(res => {
           commit('setMeuResultado', res.data)
         })
     },
     loadEscalaTrabalho({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}api/shared/operador/organico/${payload}`)
         .then(res => {
           commit('setEscalaTrabalho', res.data)
         })
     },
     loadMeusDados({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}api/shared/operador/organico_portal/${payload}`)
         .then(res => {
           commit('setMeusDados', res.data)
         })
     },
     loadMeusIndevidos({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}api/shared/operador/retroalimentacao_indevidas/${payload.usuario}`)
         .then(res => {
           commit('setMeusIndevidos', res.data)
         })
     },
     loadloadMeusTempos({ commit }, payload) {
-      Vue.prototype.$api.get(`${config.baseUrl}api/shared/operador/pausas/${payload}`).then(res => {
+      api.get(`${config.baseUrl}api/shared/operador/pausas/${payload}`).then(res => {
         commit('setMeusTempos', res.data)
       })
     },
@@ -98,7 +99,7 @@ export default {
           formData.append(key, object[key])
           return formData
         }, new FormData())
-      Vue.prototype.$api.post(urlData, getFormData(payload)).then(() => {
+      api.post(urlData, getFormData(payload)).then(() => {
         commit('setUpdateJustificativaIndevidas')
       })
     }

@@ -310,7 +310,7 @@
         }, 2000)
       }
 
-      EventBus.$on('snackbar', ({ text, color, iconRight, iconLeft }) => {
+      EventBus.on('snackbar', ({ text, color, iconRight, iconLeft }) => {
         this.snackbar.text = text
         this.snackbar.color = color || 'success'
         this.snackbar.show = true

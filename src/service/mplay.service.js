@@ -1,4 +1,5 @@
-import Vue from 'vue'
+// import Vue from 'vue'
+import api from '@/plugins/axios.js'
 import config from '../core/config'
 
 export default {
@@ -17,13 +18,13 @@ export default {
   actions: {
     loadMplayComparativoIntervalo({ commit }, payload) {
       let urlData = `${config.baseUrl}${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setMplayComparativoIntervalo', res.data)
       })
     },
     loadmplayPerformanceHora({ commit }, payload) {
       let urlData = `${config.baseUrl}${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setMplayPerformanceHora', res.data)
       })
     }

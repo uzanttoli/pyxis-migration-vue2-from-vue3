@@ -1,4 +1,5 @@
-import Vue from 'vue'
+// import Vue from 'vue'
+import api from '@/plugins/axios.js'
 import config from '../core/config'
 
 export default {
@@ -12,7 +13,7 @@ export default {
   },
   actions: {
     loadResultadoDiaDia({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}api/shared/supervisor/indicador_dia_supervisor/${payload}`)
         .then(res => {
           commit('setResultadoDiaDia', res.data)

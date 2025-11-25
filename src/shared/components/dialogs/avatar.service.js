@@ -1,5 +1,6 @@
 import config from '../../../core/config'
-import Vue from 'vue'
+// import Vue from 'vue'
+import api from '@/plugins/axios.js'
 
 const getFormData = object =>
   Object.keys(object).reduce((FormData, key) => {
@@ -43,7 +44,7 @@ export default {
   actions: {
     inserirFotoPerfil({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/avatar/inserir_foto_perfil`
-      Vue.prototype.$api.post(urlData, getFormData(payload)).then(() => {
+      api.post(urlData, getFormData(payload)).then(() => {
         commit('setInserirFotoPerfil')
       })
     },
@@ -54,7 +55,7 @@ export default {
       //     FormData.append(key, object[key]);
       //     return FormData;
       //   }, new FormData());
-      Vue.prototype.$api.post(urlData, getFormData(payload)).then(() => {
+      api.post(urlData, getFormData(payload)).then(() => {
         commit('setFotoPerfil')
       })
     },
@@ -65,7 +66,7 @@ export default {
       //     FormData.append(key, object[key]);
       //     return FormData;
       //   }, new FormData());
-      Vue.prototype.$api.post(urlData, getFormData(payload)).then(() => {
+      api.post(urlData, getFormData(payload)).then(() => {
         commit('setUpdateAvatar')
       })
     },
@@ -76,20 +77,20 @@ export default {
       //     FormData.append(key, object[key]);
       //     return FormData;
       //   }, new FormData());
-      Vue.prototype.$api.post(urlData, getFormData(payload)).then(() => {
+      api.post(urlData, getFormData(payload)).then(() => {
         commit('setSaveAvatarData')
       })
     },
     loadMyAvatar({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/avatar/avatar_selected/`
-      Vue.prototype.$api.get(urlData + `${payload}`).then(res => {
+      api.get(urlData + `${payload}`).then(res => {
         if (res.data != false) {
           commit('setMyAvatar', res.data[0].NOME_AVATAR)
         }
       })
     },
     loadNameAvatar({ commit }) {
-      Vue.prototype.$api.get(`${config.baseUrl}api/shared/avatar/avatar`).then(res => {
+      api.get(`${config.baseUrl}api/shared/avatar/avatar`).then(res => {
         commit('setNameAvatar', res.data)
       })
     }

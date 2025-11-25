@@ -1,4 +1,5 @@
-import Vue from 'vue'
+// import Vue from 'vue'
+import api from '@/plugins/axios.js'
 import config from '../../../../../src/core/config'
 
 export default {
@@ -28,15 +29,13 @@ export default {
   },
   actions: {
     loadHistoryHumor({ commit }, payload) {
-      Vue.prototype.$api
-        .get(`${config.baseUrl}api/shared/humor/historico_humor/${payload}`)
-        .then(res => {
-          commit('setHistoryHumor', res.data)
-        })
+      api.get(`${config.baseUrl}api/shared/humor/historico_humor/${payload}`).then(res => {
+        commit('setHistoryHumor', res.data)
+      })
     },
     loadMyHumor({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/humor/myHumor/`
-      Vue.prototype.$api.get(urlData + `${payload}`).then(res => {
+      api.get(urlData + `${payload}`).then(res => {
         commit('setMeuHumor', res.data[0])
       })
     },
@@ -53,7 +52,7 @@ export default {
           formData.append(key, object[key])
           return formData
         }, new FormData())
-      Vue.prototype.$api.post(urlData, getFormDataHumor(payload)).then(() => {
+      api.post(urlData, getFormDataHumor(payload)).then(() => {
         commit('setEnviarFormularioHumor')
       })
     }

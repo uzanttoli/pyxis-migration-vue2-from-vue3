@@ -1,5 +1,6 @@
 import config from '../core/config'
-import Vue from 'vue'
+// import Vue from 'vue'
+import api from '@/plugins/axios.js'
 
 export default {
   state: {
@@ -49,19 +50,19 @@ export default {
   actions: {
     loadGrupoPerfil({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/analise_perfil/grupo_perfil/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setGrupoPerfil', res.data[0])
       })
     },
     loadMensagens({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/analise_perfil/messages/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setMensagens', res.data[0])
       })
     },
     loadMinhaAnalise({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/analise_perfil/analise/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setMinhaAnalise', res.data)
       })
     },
@@ -73,7 +74,7 @@ export default {
           FormData.append(key, object[key])
           return FormData
         }, new FormData())
-      Vue.prototype.$api.post(urlData, getFormData(payload)).then(() => {
+      api.post(urlData, getFormData(payload)).then(() => {
         commit('setInserirAnalise')
       })
     },
@@ -85,7 +86,7 @@ export default {
           FormData.append(key, object[key])
           return FormData
         }, new FormData())
-      await Vue.prototype.$api.post(urlData, getFormData(payload))
+      await api.post(urlData, getFormData(payload))
       commit('setGravarAnalise')
     },
 
@@ -96,7 +97,7 @@ export default {
           FormData.append(key, object[key])
           return FormData
         }, new FormData())
-      Vue.prototype.$api.post(urlData, getFormData(payload)).then(() => {
+      api.post(urlData, getFormData(payload)).then(() => {
         commit('setResponderQuestionario')
       })
     },
@@ -107,13 +108,13 @@ export default {
           FormData.append(key, object[key])
           return FormData
         }, new FormData())
-      Vue.prototype.$api.post(urlData, getFormData(payload)).then(() => {
+      api.post(urlData, getFormData(payload)).then(() => {
         commit('setResponderQuestionario')
       })
     },
     loadValidacaoResposta({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/analise_perfil/validacao_resposta/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setValidacaoResposta', res.data[0])
       })
     },
@@ -124,13 +125,13 @@ export default {
           FormData.append(key, object[key])
           return FormData
         }, new FormData())
-      Vue.prototype.$api.post(urlData, getFormData(payload)).then(() => {
+      api.post(urlData, getFormData(payload)).then(() => {
         commit('setAtualizarResponderAgora')
       })
     },
     loadResponderHoje({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/analise_perfil/resposta_valida/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setResponderHoje', res.data[0])
       })
     },
@@ -141,7 +142,7 @@ export default {
           FormData.append(key, object[key])
           return FormData
         }, new FormData())
-      Vue.prototype.$api.post(urlData, getFormData(payload)).then(() => {
+      api.post(urlData, getFormData(payload)).then(() => {
         commit('setAtualizarResponderDepois')
       })
     }

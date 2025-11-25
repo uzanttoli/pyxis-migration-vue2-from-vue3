@@ -15,28 +15,32 @@
         <div class="wave"></div>
         <div class="wave"></div>
         <div class="wave"></div>
+
         <div class="container-img">
           <img src="../../../assets/img/logo/pyxis.png" alt="" />
         </div>
+
         <p class="_title">Seja Bem vindo!</p>
+
         <form>
           <div class="login">
             <i class="fa-solid fa-user user"></i>
             <input type="text" placeholder="Almope" v-model="loginData.username" />
           </div>
+
           <div class="pass">
             <i class="fa-solid fa-lock password"></i>
             <input :type="type" placeholder="Senha" v-model="loginData.password" />
-            <i class="fa-solid fa-eye islock" @click="type = 'text'" v-if="type == 'password'"></i>
+
+            <i class="fa-solid fa-eye islock" @click="type = 'text'" v-if="type === 'password'"></i>
+
             <i
               class="fa-solid fa-eye-slash islock"
               @click="type = 'password'"
-              v-if="type == 'text'"
+              v-if="type === 'text'"
             ></i>
           </div>
-          <!-- <div class="reset">
-            <a @click="resetSenha">Esqueceu sua senha?</a>
-          </div> -->
+
           <button @click.prevent="logar()">
             <div class="container-circle" v-if="isLoginLoaded">
               <div class="circle"></div>
@@ -52,10 +56,17 @@
 </template>
 
 <script>
-  import masks from '../../../shared/masks/masks'
+  // import masks from '../../../shared/masks/masks'
   import alerts from '../../../mixins/alerts.mixins'
+
   export default {
-    props: { abrirLogin: { type: Boolean, default: false } },
+    props: {
+      abrirLogin: {
+        type: Boolean,
+        default: null
+      }
+    },
+
     data: () => ({
       loginData: {
         username: '',
@@ -64,24 +75,25 @@
       type: 'password',
       isLoginLoaded: false
     }),
+
     mixins: [alerts],
+
     computed: {
-      masks() {
-        return masks
-      },
       _abrirLogin: {
         get() {
           return this.abrirLogin
         },
-        set(newValue) {
-          return newValue
+        set(value) {
+          this.$emit('update:abrirLogin', value)
         }
       }
     },
+
     methods: {
       resetSenha() {
         this.$emit('update:resetPassword')
       },
+
       async logar() {
         try {
           this.isLoginLoaded = true
@@ -90,7 +102,7 @@
         } catch (error) {
           let errorMessage = 'Ocorreu um erro inesperado. Tente novamente.'
 
-          if (error.response && error.response.data && error.response.data.message) {
+          if (error.response?.data?.message) {
             errorMessage = error.response.data.message
           }
 

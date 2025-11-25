@@ -1,4 +1,5 @@
-import Vue from 'vue'
+// import Vue from 'vue'
+import api from '@/plugins/axios.js'
 import config from '../core/config'
 
 export default {
@@ -21,19 +22,19 @@ export default {
   actions: {
     loadPerformanceOsMeusOperadores({ commit }, payload) {
       let urlData = `${config.baseUrl}${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setPerformanceOsMeusOperadores', res.data)
       })
     },
     loadPerformanceOsMeusSupervisores({ commit }, payload) {
       let urlData = `${config.baseUrl}${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setPerformanceOsMeusSupervisores', res.data)
       })
     },
     loadMinhaPerformanceOs({ commit }, payload) {
       let urlData = `${config.baseUrl}${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setMinhaPerformanceOs', res.data)
       })
     }

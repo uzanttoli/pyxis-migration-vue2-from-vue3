@@ -1,5 +1,6 @@
 import config from '../core/config'
-import Vue from 'vue'
+// import Vue from 'vue'
+import api from '@/plugins/axios.js'
 
 export default {
   state: {
@@ -25,25 +26,25 @@ export default {
   actions: {
     loadResultadoPainel({ commit }, resultadoPainel) {
       let urlData = `${config.baseUrl}api/shared/farol/resultado_total/${resultadoPainel.produto}/${resultadoPainel.regional}/${resultadoPainel.tipo}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setResultadoPainel', res.data)
       })
     },
     loadIntervalosFarol({ commit }, produto) {
       let urlData = `${config.baseUrl}api/shared/farol/intervalos/${produto}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setIntervalosFarol', res.data)
       })
     },
     loadRegionalFarol({ commit }, regional) {
       let urlData = `${config.baseUrl}api/shared/farol/regional/${regional}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setRegionalFarol', res.data)
       })
     },
     async loadDadosFarol({ commit }, dados) {
       let urlData = `${config.baseUrl}api/shared/farol/dados/${dados.produto}/${dados.regional}/${dados.tipo}`
-      await Vue.prototype.$api.get(urlData).then(res => {
+      await api.get(urlData).then(res => {
         commit('setDadosFarol', res.data)
       })
     }

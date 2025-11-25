@@ -1,5 +1,6 @@
-import Vue from 'vue'
+// import Vue from 'vue'
 import config from '../core/config'
+import api from '@/plugins/axios.js'
 
 export default {
   state: {
@@ -90,12 +91,12 @@ export default {
           FormData.append(key, object[key])
           return FormData
         }, new FormData())
-      await Vue.prototype.$api.post(urlData, getFormData(payload)).then(() => {
+      await api.post(urlData, getFormData(payload)).then(() => {
         commit('setSaveDataFormFeedback')
       })
     },
     loadDadosOperador({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}api/shared/indicadores/feedback/dados_operador/${payload}`)
         .then(res => {
           if (res != []) {
@@ -104,14 +105,14 @@ export default {
         })
     },
     loadSegmentoCliente({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}api/shared/indicadores/feedback/segmento_cliente/${payload}`)
         .then(res => {
           commit('setSegmentoCliente', res.data)
         })
     },
     loadAreaTransferenciaFeedback({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}api/shared/indicadores/feedback/area_transferencia/${payload}`)
         .then(res => {
           if (res.data.length > 0) commit('setAreaTransferenciaFeedback', res.data)
@@ -125,98 +126,86 @@ export default {
         })
     },
     loadMotivoContato({ commit }) {
-      Vue.prototype.$api
-        .get(`${config.baseUrl}api/shared/indicadores/feedback/motivo_contato/`)
-        .then(res => {
-          commit('setMotivoContato', res.data)
-        })
+      api.get(`${config.baseUrl}api/shared/indicadores/feedback/motivo_contato/`).then(res => {
+        commit('setMotivoContato', res.data)
+      })
     },
     loadInicioLigacaoSatisfacaoClienteFeedback({ commit }) {
-      Vue.prototype.$api
-        .get(`${config.baseUrl}api/shared/indicadores/feedback/satisfacao_cliente/`)
-        .then(res => {
-          commit('setInicioLigacaoSatisfacaoClienteFeedback', res.data)
-        })
+      api.get(`${config.baseUrl}api/shared/indicadores/feedback/satisfacao_cliente/`).then(res => {
+        commit('setInicioLigacaoSatisfacaoClienteFeedback', res.data)
+      })
     },
     loadSancoesFeedback({ commit }) {
-      Vue.prototype.$api
-        .get(`${config.baseUrl}api/shared/indicadores/feedback/sancoes/`)
-        .then(res => {
-          commit('setSancoesFeedback', res.data)
-        })
+      api.get(`${config.baseUrl}api/shared/indicadores/feedback/sancoes/`).then(res => {
+        commit('setSancoesFeedback', res.data)
+      })
     },
     loadFinalLigacaoSatisfacaoClienteFeedback({ commit }) {
-      Vue.prototype.$api
-        .get(`${config.baseUrl}api/shared/indicadores/feedback/satisfacao_cliente/`)
-        .then(res => {
-          commit('setFinalLigacaoSatisfacaoClienteFeedback', res.data)
-        })
+      api.get(`${config.baseUrl}api/shared/indicadores/feedback/satisfacao_cliente/`).then(res => {
+        commit('setFinalLigacaoSatisfacaoClienteFeedback', res.data)
+      })
     },
     loadSubMotivoContatoFeedback({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}api/shared/indicadores/feedback/sub_motivo_contato/${payload}`)
         .then(res => {
           commit('setSubMotivoContatoFeedback', res.data)
         })
     },
     loadSegundoSubMotivoContatoFeedback({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}api/shared/indicadores/feedback/sub_motivo_contato/${payload}`)
         .then(res => {
           commit('setSegundoSubMotivoContatoFeedback', res.data)
         })
     },
     loadPaperQualitativoFeedback({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}api/shared/indicadores/feedback/paper_qualitativo/${payload}`)
         .then(res => {
           commit('setPaperQualitativoFeedback', res.data)
         })
     },
     loadQualidadeChamadaFeedback({ commit }) {
-      Vue.prototype.$api
-        .get(`${config.baseUrl}api/shared/indicadores/feedback/qualidade_chamada/`)
-        .then(res => {
-          commit('setQualidadeChamadaFeedback', res.data)
-        })
+      api.get(`${config.baseUrl}api/shared/indicadores/feedback/qualidade_chamada/`).then(res => {
+        commit('setQualidadeChamadaFeedback', res.data)
+      })
     },
     loadComportamentoNegativoFeedback({ commit }) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}api/shared/indicadores/feedback/comportamento_negativo/`)
         .then(res => {
           commit('setComportamentoNegativoFeedback', res.data)
         })
     },
     loadCanaisAutoatendimentoFeedback({ commit }) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}api/shared/indicadores/feedback/canais_autoatendimento/`)
         .then(res => {
           commit('setCanaisAutoatendimento', res.data)
         })
     },
     loadInformaCanaisAutoatendimentoFeedback({ commit }) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}api/shared/indicadores/feedback/informa_canais_autoatendimento/`)
         .then(res => {
           commit('setInformaCanaisAutoatendimento', res.data)
         })
     },
     loadCampanhasFeedback({ commit }) {
-      Vue.prototype.$api
-        .get(`${config.baseUrl}api/shared/indicadores/feedback/campanhas/`)
-        .then(res => {
-          commit('setCampanhasFeedback', res.data)
-        })
+      api.get(`${config.baseUrl}api/shared/indicadores/feedback/campanhas/`).then(res => {
+        commit('setCampanhasFeedback', res.data)
+      })
     },
     loadMotivoInfratorRechamadaFeedback({ commit }) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}api/shared/indicadores/feedback/motivo_infrator_rechamada/`)
         .then(res => {
           commit('setMotivoInfratorRechamadaFeedback', res.data)
         })
     },
     loadSubMotivoInfratorRechamadaFeedback({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(
           `${config.baseUrl}api/shared/indicadores/feedback/subMotivo_infrator_rechamada/${payload}`
         )
@@ -225,7 +214,7 @@ export default {
         })
     },
     loadMicroMotivoInfratorRechamadaFeedback({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(
           `${config.baseUrl}api/shared/indicadores/feedback/microMotivo_infrator_rechamada/${payload}`
         )

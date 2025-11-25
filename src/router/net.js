@@ -1,6 +1,6 @@
 import Chat from '@/pages/chat/chat.vue'
 import GerencialGame from '@/pages/gamification/gerencial/Gerencial.vue'
-import HistoriaGamification from '@/pages/gamification/historia/Historia'
+import HistoriaGamification from '@/pages/gamification/historia/Historia.vue'
 import Home from '@/pages/home/Home.vue'
 import Login from '@/core/components/login.vue'
 import Notification from '@/shared/components/notification/NotificationComponent.vue'
@@ -631,7 +631,7 @@ const routes = [
   {
     path: '/pyxis/gerencial/dashboard',
     name: 'gerencialResumo',
-    component: () => import('../pages/dashboard/net/dashboard'),
+    component: () => import('../pages/dashboard/net/dashboard.vue'),
     meta: {
       title: 'CCO | Gerencial Resumo'
     }

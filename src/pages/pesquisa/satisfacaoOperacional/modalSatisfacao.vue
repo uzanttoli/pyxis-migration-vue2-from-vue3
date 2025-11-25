@@ -152,7 +152,8 @@
   import { functions } from '../../../js/functions'
   import { Tratamento } from '../../../js/Tratamento'
 
-  const gestores = require('./gestores.json')
+  // const gestores = require('./gestores.json')
+  import gestores from './gestores.json'
   // const crypto = require('crypto')
   export default {
     components: { ValidationObserver, ValidationProvider },

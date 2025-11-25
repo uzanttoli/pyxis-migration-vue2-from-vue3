@@ -1,4 +1,5 @@
-import Vue from 'vue'
+// import Vue from 'vue'
+import api from '@/plugins/axios.js'
 import config from '../core/config'
 
 let timeAlert = '4500'
@@ -102,34 +103,34 @@ export default {
   actions: {
     // loadListarDownload({ commit }, payload) {
     //   let urlData = `${config.baseUrl}api/shared/formularios/tabulador_erro_pagamento/listar_download_deacordo/${payload}`;
-    //   Vue.prototype.$api.get(urlData).then((res) => {
+    //   api.get(urlData).then((res) => {
     //     commit("setListarDownload", res.data);
     //   });
     // },
     deleteCadastroErroPagamento({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/formularios/tabulador_erro_pagamento/delete_cadastro/${payload}`
-      Vue.prototype.$api.put(urlData).then(() => {
+      api.put(urlData).then(() => {
         commit('setDeleteCadastro')
       })
     },
 
     loadMeusCadastrosDeErro({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/formularios/tabulador_erro_pagamento/meus_cadastros/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => commit('setMeusCadastrosDeErro', res.data))
+      api.get(urlData).then(res => commit('setMeusCadastrosDeErro', res.data))
     },
     loadHistoricoDeCadastro({ commit }) {
       let urlData = `${config.baseUrl}api/shared/formularios/tabulador_erro_pagamento/historico_erro_pagamento/`
-      Vue.prototype.$api.get(urlData).then(res => commit('setHistoricoDeCadastro', res.data))
+      api.get(urlData).then(res => commit('setHistoricoDeCadastro', res.data))
     },
     loadCasosJaCadastrados({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/formularios/tabulador_erro_pagamento/casos_cadastrados/${payload.matricula}/${payload.data}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setCasosJaCadastrados', res.data)
       })
     },
     loadPrazoCadastro({ commit }) {
       let urlData = `${config.baseUrl}api/shared/formularios/tabulador_erro_pagamento/prazo_de_cadastro/`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setPrazoCadastro', res.data)
       })
     },
@@ -140,13 +141,13 @@ export default {
           FormData.append(key, object[key])
           return FormData
         }, new FormData())
-      await Vue.prototype.$api.post(urlData, getFormData(payload)).then(() => {
+      await api.post(urlData, getFormData(payload)).then(() => {
         commit('setInserirDadosFormularioErroPagamento')
       })
     },
     loadValorSalario({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/formularios/tabulador_erro_pagamento/valor_atraso_ausencia/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         if (res.data != '') {
           commit('setValorSalario', res.data)
         } else {
@@ -157,7 +158,7 @@ export default {
     loadPeriodoDoErroPagamento({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/formularios/tabulador_erro_pagamento/periodo_da_folha/`
       let urlComDataFormatada = (urlData += `${payload}`)
-      Vue.prototype.$api.get(urlComDataFormatada).then(res => {
+      api.get(urlComDataFormatada).then(res => {
         if (res.data != '') {
           commit('setPeriodoDoErroPagamento', res.data)
         } else {
@@ -167,19 +168,19 @@ export default {
     },
     loadTipoDesconto({ commit }) {
       let urlData = `${config.baseUrl}api/shared/formularios/tabulador_erro_pagamento/tipo_de_desconto`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setTipoDesconto', res.data)
       })
     },
     loadCausaRaiz({ commit }) {
       let urlData = `${config.baseUrl}api/shared/formularios/tabulador_erro_pagamento/causa_raiz`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setCausaRaiz', res.data)
       })
     },
     loadConsultarNomePorRH({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/formularios/tabulador_erro_pagamento/consulta_de_nome_por_rh/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         if (res.data != '') {
           commit('setConsultarNomePorRH', res.data)
         } else {

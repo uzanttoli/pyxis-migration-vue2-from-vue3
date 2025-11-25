@@ -1,4 +1,5 @@
-import Vue from 'vue'
+// import Vue from 'vue'
+import api from '@/plugins/axios.js'
 import config from '../core/config'
 
 export default {
@@ -68,13 +69,13 @@ export default {
     /**cadastro improdutivo */
     deleteDataAction({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/formularios/cadastro_improdutivo/delete/${payload}`
-      Vue.prototype.$api.put(urlData).then(() => {
+      api.put(urlData).then(() => {
         commit('setDeleteData')
       })
     },
     loadListaDeValidacao({ commit }) {
       let urlData = `${config.baseUrl}api/shared/formularios/cadastro_improdutivo/lista_validacao/`
-      Vue.prototype.$api.get(urlData).then(res => commit('setListaDeValidacao', res.data))
+      api.get(urlData).then(res => commit('setListaDeValidacao', res.data))
     },
     updateDataFormCadastroImprodutivoAction({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/formularios/cadastro_improdutivo/update/`
@@ -83,19 +84,19 @@ export default {
           FormData.append(key, object[key])
           return FormData
         }, new FormData())
-      Vue.prototype.$api.post(urlData, getFormData(payload)).then(() => {
+      api.post(urlData, getFormData(payload)).then(() => {
         commit('setUpdateDataFormCadastroImprodutivo')
       })
     },
     loadListaDeValidacaoImprodutivos({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/formularios/cadastro_improdutivo/validacao_improdutivos/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setListaDeValidacaoImprodutivos', res.data)
       })
     },
     loadMotivosImprodutivos({ commit }) {
       let urlData = `${config.baseUrl}api/shared/formularios/cadastro_improdutivo/motivos_improdutivos/`
-      Vue.prototype.$api.get(urlData).then(res => commit('setMotivosImprodutivos', res.data))
+      api.get(urlData).then(res => commit('setMotivosImprodutivos', res.data))
     },
     // async saveDataFormCadastroImprodutivoAction({ commit }, payload) {
     //   let urlData = `${config.baseUrl}api/shared/formularios/cadastro_improdutivo/insert`;
@@ -104,7 +105,7 @@ export default {
     //       FormData.append(key, object[key]);
     //       return FormData;
     //     }, new FormData());
-    //   await Vue.prototype.$api.post(urlData, getFormData(payload)).then(() => {
+    //   await api.post(urlData, getFormData(payload)).then(() => {
     //     commit("setSaveDataFormCadastroImprodutivo");
     //   });
     // },
@@ -112,19 +113,19 @@ export default {
     /**expurgo scoreboard */
     loadHistoricoExpurgo({ commit }) {
       let urlData = `${config.baseUrl}api/shared/formularios/tabulador_expurgo/historico_expurgo/`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setHistoricoExpurgo', res.data)
       })
     },
     loadDadosParaValidar({ commit }) {
       let urlData = `${config.baseUrl}api/shared/formularios/tabulador_expurgo/validar_dados/`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setDadosParaValidar', res.data)
       })
     },
     loadIndicadoresExpurgo({ commit }) {
       let urlData = `${config.baseUrl}api/shared/formularios/tabulador_expurgo/indicadores_expurgo/`
-      Vue.prototype.$api.get(urlData).then(res => commit('setIndicadoresExpurgo', res.data))
+      api.get(urlData).then(res => commit('setIndicadoresExpurgo', res.data))
     }
   },
   getters: {

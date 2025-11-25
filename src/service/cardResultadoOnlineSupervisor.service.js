@@ -1,5 +1,6 @@
+// import Vue from 'vue'
+import api from '@/plugins/axios.js'
 import config from '../core/config'
-import Vue from 'vue'
 const url = 'api/shared/extrato_net/'
 export default {
   state: {
@@ -73,80 +74,80 @@ export default {
   },
   actions: {
     loadChamadasAtendidasSupervisorExtratoNet({ commit }, payload) {
-      Vue.prototype.$api.get(`${config.baseUrl}${url}chamadas_supervisor/${payload}`).then(res => {
+      api.get(`${config.baseUrl}${url}chamadas_supervisor/${payload}`).then(res => {
         commit('setChamadasAtendidasSupervisorExtratoNet', res.data)
       })
     },
     loadRechamadaSupervisorExtratoNet({ commit }, payload) {
-      Vue.prototype.$api.get(`${config.baseUrl}${url}rechamada_supervisor/${payload}`).then(res => {
+      api.get(`${config.baseUrl}${url}rechamada_supervisor/${payload}`).then(res => {
         commit('setRechamadaSupervisorExtratoNet', res.data)
       })
     },
     loadRechamadaDiaSupervisorExtratoNet({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}${url}rechamada_dia_supervisor/${payload}`)
         .then(res => {
           commit('setRechamadaDiaSupervisorExtratoNet', res.data)
         })
     },
     loadShortcallSupervisorExtratoNet({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}${url}shortcall60_supervisor/${payload}`)
         .then(res => {
           commit('setShortcallSupervisorExtratoNet', res.data)
         })
     },
     loadTransferenciaRetencaoSupervisorExtratoNet({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}${url}transferencia_retencao_supervisor/${payload}`)
         .then(res => {
           commit('setTransferenciaRetencaoSupervisorExtratoNet', res.data)
         })
     },
     loadTransferenciaIndevidaSupervisorExtratoNet({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}${url}transferencia_indevida_ret_supervisor/${payload}`)
         .then(res => {
           commit('setTransferenciaIndevidaSupervisorExtratoNet', res.data)
         })
     },
     loadTransferenciaMudaSupervisorExtratoNet({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}${url}transferencia_muda_supervisor/${payload}`)
         .then(res => {
           commit('setTransferenciaMudaSupervisorExtratoNet', res.data)
         })
     },
     loadTransferenciaMudaIndevidaSupervisorExtratoNet({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}${url}transferencia_muda_indevida_supervisor/${payload}`)
         .then(res => {
           commit('setTransferenciaMudaIndevidaSupervisorExtratoNet', res.data)
         })
     },
     loadTransferenciaDowngradeSupervisorExtratoNet({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}${url}transferencia_down_supervisor/${payload}`)
         .then(res => {
           commit('setTransferenciaDowngradeSupervisorExtratoNet', res.data)
         })
     },
     loadTransferenciaDowngradeIndevidaSupervisorExtratoNet({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}${url}transferencia_down_indevida_supervisor/${payload}`)
         .then(res => {
           commit('setTransferenciaDowngradeIndevidaSupervisorExtratoNet', res.data)
         })
     },
     loadTransferenciaMudancaEnderecoSupervisorExtratoNet({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}${url}transferencia_mudanca_endereco_supervisor/${payload}`)
         .then(res => {
           commit('setTransferenciaMudancaEnderecoSupervisorExtratoNet', res.data)
         })
     },
     loadTransferenciaMudancaEnderecoIndevidaSupervisorExtratoNet({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}${url}transferencia_mudanca_endereco_indevida_supervisor/${payload}`)
         .then(res => {
           commit('setTransferenciaMudancaEnderecoIndevidaSupervisorExtratoNet', res.data)
@@ -154,28 +155,28 @@ export default {
     },
     loadDesconexaoSupervisorExtratoNet({ commit }, payload) {
       /*Adicionado 07/12/2021*/
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}${url}desconexao_supervisor/${payload}`)
         .then(res => {
           commit('setDesconexaoSupervisorExtratoNet', res.data)
         })
     },
     loadShortcall30SupervisorExtratoNet({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}${url}shortcall30_supervisor/${payload}`)
         .then(res => {
           commit('setShortcall30SupervisorExtratoNet', res.data)
         })
     },
     loadTransferenciaTotalSupervisorExtratoNet({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}${url}transferencia_total_supervisor/${payload}`)
         .then(res => {
           commit('setTransferenciaTotalSupervisorExtratoNet', res.data)
         })
     },
     loadTransferenciaSupervisor({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}${url}transferencia_supervisor/${payload}`)
         .then(res => {
           commit('setTransferenciaSupervisor', res.data)

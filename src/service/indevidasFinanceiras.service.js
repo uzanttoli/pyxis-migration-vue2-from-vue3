@@ -1,5 +1,6 @@
 import config from '../core/config'
-import Vue from 'vue'
+// import Vue from 'vue'
+import api from '@/plugins/axios.js'
 
 const linkApi = 'api/shared/formularios/tabulador_indevidas_financeiras/'
 export default {
@@ -93,91 +94,91 @@ export default {
   actions: {
     loadRecordReport({ commit }) {
       let urlData = `${config.baseUrl}${linkApi}list_reports`
-      Vue.prototype.$api.get(urlData).then(res => commit('setRecordReport', res.data))
+      api.get(urlData).then(res => commit('setRecordReport', res.data))
     },
     loadConsultaDeAlmope({ commit }, payload) {
       let urlData = `${config.baseUrl}${linkApi}consulta_almope/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => commit('setConsultaDeAlmope', res.data))
+      api.get(urlData).then(res => commit('setConsultaDeAlmope', res.data))
     },
     loadLogBookList({ commit }) {
       let urlData = `${config.baseUrl}${linkApi}log_book_list`
-      Vue.prototype.$api.get(urlData).then(res => commit('setLogBookList', res.data))
+      api.get(urlData).then(res => commit('setLogBookList', res.data))
     },
     loadTreatmentHistory({ commit }) {
       let urlData = `${config.baseUrl}${linkApi}treatment_history`
-      Vue.prototype.$api.get(urlData).then(res => commit('setTreatmentHistory', res.data))
+      api.get(urlData).then(res => commit('setTreatmentHistory', res.data))
     },
     loadMinhasTratativasMes({ commit }, payload) {
       let urlData = `${config.baseUrl}${linkApi}minhas_tratativas_mes/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => commit('setMinhasTratativasMes', res.data))
+      api.get(urlData).then(res => commit('setMinhasTratativasMes', res.data))
     },
     loadMinhasTratativasDia({ commit }, payload) {
       let urlData = `${config.baseUrl}${linkApi}minhas_tratativas_dia/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => commit('setMinhasTratativasDia', res.data))
+      api.get(urlData).then(res => commit('setMinhasTratativasDia', res.data))
     },
     loadCasosConcluidos({ commit }) {
       let urlData = `${config.baseUrl}${linkApi}casos_concluidos/`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setCasosConcluidos', res.data)
       })
     },
     loadQuantidadeCasosPendentes({ commit }) {
       let urlData = `${config.baseUrl}${linkApi}casos_pendentes/`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setQuantidadeCasosPendentes', res.data)
       })
     },
     loadValidacaoDeCasosExistentesNaoTratados({ commit }, payload) {
       let urlData = `${config.baseUrl}${linkApi}existi_caso/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setValidacaoDeCasosExistentesNaoTratados', res.data)
       })
     },
     loadIndevidasParaAuditar({ commit }) {
       let urlData = `${config.baseUrl}${linkApi}ocorrencias_para_tratamento/`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setIndevidasParaAuditar', res.data)
       })
     },
     loadFechamentoCausaMacroBKO({ commit }) {
       let urlData = `${config.baseUrl}${linkApi}fechamento_causa_macro_bko`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setFechamentoCausaMacroBKO', res.data)
       })
     },
     loadFechamentoClassificacaoBKO({ commit }) {
       let urlData = `${config.baseUrl}${linkApi}fechamento_classificacao_bko`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setFechamentoClassificacaoBKO', res.data)
       })
     },
     loadCausaMacroN1({ commit }, payload) {
       let urlData = `${config.baseUrl}${linkApi}causa_macro_n1/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setCausaMacroN1', res.data)
       })
     },
     loadCausaMicroN1({ commit }, payload) {
       let urlData = `${config.baseUrl}${linkApi}causa_micro_n1/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setCausaMicroN1', res.data)
       })
     },
     loadAuditoresLiberados({ commit }) {
       let urlData = `${config.baseUrl}${linkApi}auditores_liberados`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setAuditoresLiberados', res.data)
       })
     },
     loadClassificacaoN1({ commit }) {
       let urlData = `${config.baseUrl}${linkApi}classificacao_n1/`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setClassificacaoN1', res.data)
       })
     },
     loadCenarioReclamadoCliente({ commit }, payload) {
       let urlData = `${config.baseUrl}${linkApi}cenario_reclamado_cliente/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setCenarioReclamadoCliente', res.data)
       })
     },
@@ -188,7 +189,7 @@ export default {
           FormData.append(key, object[key])
           return FormData
         }, new FormData())
-      Vue.prototype.$api
+      api
         .post(urlData, getFormData(payload))
         .then(() => commit('setSaveDataLogBook'))
     },
@@ -199,7 +200,7 @@ export default {
           formData.append(key, object[key])
           return formData
         }, new FormData())
-      Vue.prototype.$api.post(urlData, getFormData(payload)).then(() => {
+      api.post(urlData, getFormData(payload)).then(() => {
         commit('setEnviarDados')
       })
     },
@@ -210,7 +211,7 @@ export default {
           formData.append(key, object[key])
           return formData
         }, new FormData())
-      Vue.prototype.$api.post(urlData, getFormData(payload)).then(() => {
+      api.post(urlData, getFormData(payload)).then(() => {
         commit('setUpdateDadosAposTratativa')
       })
     }

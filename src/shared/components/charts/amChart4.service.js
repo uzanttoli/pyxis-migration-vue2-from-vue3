@@ -1,4 +1,5 @@
-import Vue from 'vue'
+// import Vue from 'vue'
+import api from '@/plugins/axios.js'
 import config from '../../../core/config'
 
 export default {
@@ -26,7 +27,7 @@ export default {
     loadFalhaErroSistemico({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/graficos/falha_erro_sistemico/`
       let falha = (urlData += `${payload}`)
-      Vue.prototype.$api.get(falha).then(res => {
+      api.get(falha).then(res => {
         if (res != []) {
           commit('setFalhaErroSistemico', res.data)
         }
@@ -35,7 +36,7 @@ export default {
     loadDadosErroSistemico({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/graficos/dados_erro_sistemico/`
       let bandeira = (urlData += `${payload}`)
-      Vue.prototype.$api.get(bandeira).then(res => {
+      api.get(bandeira).then(res => {
         if (res != []) {
           commit('setDadosErroSistemico', res.data)
         }
@@ -43,13 +44,13 @@ export default {
     },
     loadAbsDadosGraficos({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/graficos/absDadosGraficos/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setAbsDadosGraficos', res.data)
       })
     },
     loadHistoricoLogPyxis({ commit }) {
       let urlData = `${config.baseUrl}api/shared/registro_log_pyxis/historicoAcessoPyxis`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setHistoricoLogPyxis', res.data)
       })
     }

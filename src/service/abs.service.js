@@ -1,4 +1,5 @@
-import Vue from 'vue'
+// import Vue from 'vue'
+import api from '@/plugins/axios.js'
 import config from '../core/config'
 
 export default {
@@ -29,7 +30,7 @@ export default {
     async loadAgrupamentosAbs({ commit }, produto) {
       let urlData = `${config.baseUrl}api/shared/abs/agrupamentos/`
       if (produto) urlData += produto + '/'
-      await Vue.prototype.$api.get(urlData).then(res => {
+      await api.get(urlData).then(res => {
         commit('setAbsAgrupamentos', res.data)
       })
     },
@@ -40,13 +41,13 @@ export default {
         url += produto + '/'
         if (agrupamento) url += agrupamento + '/'
       }
-      await Vue.prototype.$api.get(url).then(res => {
+      await api.get(url).then(res => {
         commit('setAbsConfig', res.data)
       })
     },
     async loadProdutosAbs({ dispatch }) {
       let urlData = `${config.baseUrl}api/shared/abs/produtos/`
-      await Vue.prototype.$api.get(urlData).then(res => {
+      await api.get(urlData).then(res => {
         let produtos = res.data
         dispatch('setProdutos', produtos, { root: true })
       })
@@ -56,7 +57,7 @@ export default {
 
     //     if (produto)
     //         url += produto
-    //     await Vue.prototype.$api.get(url).then((res) => {
+    //     await api.get(url).then((res) => {
     //         commit('setAbsCampanha', res.data)
     //     });
     // }

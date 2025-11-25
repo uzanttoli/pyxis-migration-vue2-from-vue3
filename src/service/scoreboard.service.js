@@ -1,4 +1,5 @@
-import Vue from 'vue'
+// import Vue from 'vue'
+import api from '@/plugins/axios.js'
 import config from '../core/config'
 
 export default {
@@ -32,46 +33,36 @@ export default {
   },
   actions: {
     loadHistoricoScoreboard({ commit }, payload) {
-      Vue.prototype.$api
-        .get(`${config.baseUrl}api/shared/scoreboard/historico/${payload}`)
-        .then(res => {
-          commit('setHistoricoScoreboard', res.data)
-        })
+      api.get(`${config.baseUrl}api/shared/scoreboard/historico/${payload}`).then(res => {
+        commit('setHistoricoScoreboard', res.data)
+      })
     },
     loadScoreboardOperadoresPorSupervisor({ commit }, payload) {
-      Vue.prototype.$api
-        .get(`${config.baseUrl}api/shared/scoreboard/view_sup_operador/${payload}`)
-        .then(res => {
-          commit('setScoreboardOperadoresPorSupervisor', res.data)
-        })
+      api.get(`${config.baseUrl}api/shared/scoreboard/view_sup_operador/${payload}`).then(res => {
+        commit('setScoreboardOperadoresPorSupervisor', res.data)
+      })
     },
     loadScoreboardOperadorPorCoordenador({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}api/shared/scoreboard/scoreboard_operadores_coordenador/${payload}`)
         .then(res => {
           commit('setScoreboardOperadorPorCoordenador', res.data)
         })
     },
     loadScoreboard({ commit }, payload) {
-      Vue.prototype.$api
-        .get(`${config.baseUrl}api/shared/scoreboard/resultado/${payload}`)
-        .then(res => {
-          commit('setScoreboard', res.data)
-        })
+      api.get(`${config.baseUrl}api/shared/scoreboard/resultado/${payload}`).then(res => {
+        commit('setScoreboard', res.data)
+      })
     },
     loadAtingimentoScoreboard({ commit }, payload) {
-      Vue.prototype.$api
-        .get(`${config.baseUrl}api/shared/scoreboard/atingimento/${payload}`)
-        .then(res => {
-          commit('setAtingimentoScoreboard', res.data)
-        })
+      api.get(`${config.baseUrl}api/shared/scoreboard/atingimento/${payload}`).then(res => {
+        commit('setAtingimentoScoreboard', res.data)
+      })
     },
     loadScoreboardSupervisor({ commit }, payload) {
-      Vue.prototype.$api
-        .get(`${config.baseUrl}api/shared/scoreboard/supervisor/${payload}`)
-        .then(res => {
-          commit('setScoreboardSupervisor', res.data)
-        })
+      api.get(`${config.baseUrl}api/shared/scoreboard/supervisor/${payload}`).then(res => {
+        commit('setScoreboardSupervisor', res.data)
+      })
     }
   },
   getters: {

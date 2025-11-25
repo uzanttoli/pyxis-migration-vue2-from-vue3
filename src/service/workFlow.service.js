@@ -1,5 +1,6 @@
 import config from '../core/config'
-import Vue from 'vue'
+// import Vue from 'vue'
+import api from '@/plugins/axios.js'
 
 export default {
   state: {
@@ -25,25 +26,25 @@ export default {
   actions: {
     loadConfigAcompanhamentoGeral({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/workflow/config_acompanhamento_geral/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setConfigAcompanhamentoGeral', res.data)
       })
     },
     loadConfigLinhaWorkflow({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/workflow/config_linha_muda/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setConfigLinhaMudaWorkflow', res.data)
       })
     },
     loadConfigWorkflow({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/workflow/config/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setConfigWorkflow', res.data)
       })
     },
     loadAgrupamentosWorkflow({ commit }) {
       let urlData = `${config.baseUrl}api/shared/workflow/agrupamentos_shortcall/`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setAgrupamentosWorkflow', res.data)
       })
     }

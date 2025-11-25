@@ -1,5 +1,6 @@
 import config from '../core/config'
-import Vue from 'vue'
+// import Vue from 'vue'
+import api from '@/plugins/axios.js'
 
 export default {
   state: {
@@ -48,7 +49,7 @@ export default {
       let urlData = `${config.baseUrl}api/shared/tmt/agrupamentos/`
       if (produto) urlData += produto + '/'
 
-      await Vue.prototype.$api.get(urlData).then(res => {
+      await api.get(urlData).then(res => {
         commit('setTmtAgrupamentos', res.data)
       })
     },
@@ -58,17 +59,17 @@ export default {
         urlData += param.produto + '/'
         if (param.agrupamento) urlData += param.agrupamento + '/'
       }
-      await Vue.prototype.$api.get(urlData).then(res => commit('setConfigTmt', res.data))
+      await api.get(urlData).then(res => commit('setConfigTmt', res.data))
     },
     // async loadProdutos({commit}, params){
     //   let urlData = `${config.baseUrl}api/shared/tmt/produtos/${params.perfil}/${params.operacao}`
-    //   Vue.prototype.$api.get(urlData).then((res)=>{
+    //   api.get(urlData).then((res)=>{
     //     commit("setProdutos", res.data)
     //   })
     // },
     async loadProdutos({ dispatch }, params) {
       let urlData = `${config.baseUrl}api/shared/tmt/produtos/${params.filtro}/${params.operacao}`
-      await Vue.prototype.$api.get(urlData).then(res => {
+      await api.get(urlData).then(res => {
         let produtos = res.data
         dispatch('setProdutos', produtos, { root: true })
       })
@@ -88,7 +89,7 @@ export default {
       if (intervalos) urlData += intervalos.skill + '/'
       if (intervalos && intervalos.skillType) urlData += intervalos.skillType + '/'
 
-      Vue.prototype.$api.get(urlData).then(res => commit('setIntervalos', res.data))
+      api.get(urlData).then(res => commit('setIntervalos', res.data))
     }
   },
   getters: {

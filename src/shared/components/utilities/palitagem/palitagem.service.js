@@ -1,4 +1,5 @@
-import Vue from 'vue'
+// import Vue from 'vue'
+import api from '@/plugins/axios.js'
 import config from '../../../../core/config'
 
 export default {
@@ -26,7 +27,7 @@ export default {
     async loadMotivosContato({ commit }, produto) {
       let urlData = `${config.baseUrl}api/shared/palitagem/motivo_contato/`
       if (produto) urlData += produto + '/'
-      await Vue.prototype.$api.get(urlData).then(res => {
+      await api.get(urlData).then(res => {
         commit('setMotivosContato', res.data)
       })
     },
@@ -34,14 +35,14 @@ export default {
     async loadSubMotivosContato({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/palitagem/sub_motivo_contato/`
       if (payload) urlData += payload.produto + '/' + payload.motivo
-      await Vue.prototype.$api.get(urlData).then(res => {
+      await api.get(urlData).then(res => {
         commit('setSubMotivosContato', res.data)
       })
     },
     async loadCanaisDeAutoatendimento({ commit }, produto) {
       let urlData = `${config.baseUrl}api/shared/palitagem/canais_auto_atendimento/`
       if (produto) urlData += produto
-      await Vue.prototype.$api.get(urlData).then(res => {
+      await api.get(urlData).then(res => {
         commit('setCanaisDeAutoatendimento', res.data)
       })
     }
@@ -52,7 +53,7 @@ export default {
     //     return formData;
     //   }, new FormData());
 
-    //   Vue.prototype.$api.post(urlData,getFormData(payload)).then(() => {
+    //   api.post(urlData,getFormData(payload)).then(() => {
     //     commit('setSaveStatusPalitagem');
     //   });
     // }

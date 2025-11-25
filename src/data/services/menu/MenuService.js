@@ -1,5 +1,6 @@
-import Vue from 'vue'
+// import Vue from 'vue'
 import config from '../../../core/config.js'
+import api from '@/plugins/axios.js'
 
 const MenuService = {
   /**
@@ -13,7 +14,7 @@ const MenuService = {
       if (!menuItens) {
         const urlData = `${config.pyxisReceptivoUrl}receptivo/menu/items/listar`
 
-        const res = await Vue.prototype.$api.get(urlData, {
+        const res = await api.get(urlData, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`
           }

@@ -1,4 +1,5 @@
-import Vue from 'vue'
+// import Vue from 'vue'
+import api from '@/plugins/axios.js'
 import config from '../../../core/config.js'
 
 const MenuItemPermissoesService = {
@@ -11,7 +12,7 @@ const MenuItemPermissoesService = {
   async getById(id) {
     try {
       const urlData = `${config.pyxisReceptivoUrl}receptivo/menu/permissao/listar/${id}`
-      const res = await Vue.prototype.$api.get(urlData)
+      const res = await api.get(urlData)
       return res.data
     } catch (error) {
       console.error('Erro ao recuperar item de agrupamento de menu pelo ID:', error)
@@ -27,7 +28,7 @@ const MenuItemPermissoesService = {
   async create(data) {
     try {
       const urlData = `${config.pyxisReceptivoUrl}receptivo/menu/permissao/nova`
-      const res = await Vue.prototype.$api.post(urlData, data)
+      const res = await api.post(urlData, data)
       return res.data
     } catch (error) {
       console.error('Erro ao criar item de permissão de rota:', error)
@@ -43,7 +44,7 @@ const MenuItemPermissoesService = {
   async delete(id) {
     try {
       const urlData = `${config.pyxisReceptivoUrl}receptivo/menu/permissao/delete/${id}`
-      const res = await Vue.prototype.$api.delete(urlData)
+      const res = await api.delete(urlData)
       return res.data
     } catch (error) {
       console.error('Erro ao excluir item de agrupamento de menu:', error)

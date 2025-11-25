@@ -1,4 +1,5 @@
-import Vue from 'vue'
+// import Vue from 'vue'
+import api from '@/plugins/axios.js'
 import config from '../core/config'
 
 export default {
@@ -85,13 +86,13 @@ export default {
   actions: {
     loadFiltroDemandas({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/demandas_supervisor/filtro_tratativa/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setFiltroDemandas', res.data)
       })
     },
     loadCasosDemandasPendentes({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/demandas_supervisor/quantidade_casos_pendentes/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setCasosDemandasPendentes', res.data)
       })
     },
@@ -102,36 +103,36 @@ export default {
           formData.append(key, object[key])
           return formData
         }, new FormData())
-      Vue.prototype.$api.post(urlData, getFormData(payload)).then(() => {
+      api.post(urlData, getFormData(payload)).then(() => {
         commit('setAtualizarDadosTratados')
       })
     },
     loadDadosTratativaDemanda({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/demandas_supervisor/dados_tratativa_demandas/${payload.nome}/${payload.tipo}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setDadosTratativaDemanda', res.data)
       })
     },
     loadOperadorReorientado({ commit }) {
       let urlData = `${config.baseUrl}api/shared/demandas_supervisor/operador_reorientado/`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setOperadorReorientado', res.data)
       })
     },
     loadHouveContatoCliente({ commit }) {
       let urlData = `${config.baseUrl}api/shared/demandas_supervisor/houve_contato_cliente/`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setHouveContatoCliente', res.data)
       })
     },
     loadRetornoDemandasSupervisor({ commit }) {
       let urlData = `${config.baseUrl}api/shared/demandas_supervisor/retorno_supervisor/`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setRetornoDemandasSupervisor', res.data)
       })
     },
     loadMinhaEvolucaoSupervisor({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}api/shared/supervisor/minhaEvolucaoSupervisor/${payload}`)
         .then(res => {
           commit('setMinhaEvolucaoSupervisor', res.data)
@@ -139,7 +140,7 @@ export default {
     },
     loadOperadoresLogadosPorSupervisor({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/registro_log_pyxis/supervisor/${payload}`
-      Vue.prototype.$api.get(urlData).then(res => {
+      api.get(urlData).then(res => {
         commit('setOperadoresLogadosPorSupervisor', res.data)
       })
     },
@@ -151,40 +152,40 @@ export default {
           return formData
         }, new FormData())
 
-      Vue.prototype.$api.post(urlData, getFormData(payload)).then(() => {
+      api.post(urlData, getFormData(payload)).then(() => {
         commit('setAcessPortal')
       })
     },
     loadAbsMes({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}api/shared/supervisor/abs_mes/${payload}`)
         .then(res => {
           commit('setAbsMes', res.data)
         })
     },
     loadResumoIndicadores({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}api/shared/supervisor/resumo_indicadores_online/${payload}`)
         .then(res => {
           commit('setResumoIndicadores', res.data)
         })
     },
     loadPausasPorSupervisor({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}api/shared/pausas/pausas_supervisor/${payload}`)
         .then(res => {
           commit('setPausasPorSupervisor', res.data)
         })
     },
     // loadJustificativaAbs({ commit }, payload) {
-    //   Vue.prototype.$api
+    //   api
     //     .get(`${config.baseUrl}api/shared/abs/abs_por_supervisor/${payload}`)
     //     .then((res) => {
     //       commit("setJustificativaAbs", res.data);
     //     });
     // },
     // loadHistoricoJustificativaAbs({ commit }, payload) {
-    //   Vue.prototype.$api
+    //   api
     //     .get(
     //       `${config.baseUrl}api/shared/abs/historico_justificativa_abs/${payload}`
     //     )
@@ -193,14 +194,14 @@ export default {
     //     });
     // },
     // loadAbsJustificadoSupervisor({ commit }) {
-    //   Vue.prototype.$api
+    //   api
     //     .get(`${config.baseUrl}api/shared/abs/justificativa_abs/`)
     //     .then((res) => {
     //       commit("setAbsJustificadoSupervisor", res.data);
     //     });
     // },
     loadQuantidadeOperadoresLogados({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}api/shared/supervisor/qtd_operadores_logados/${payload}`)
         .then(res => {
           commit('setQuantidadeOperadoresLogados', res.data)
@@ -213,12 +214,12 @@ export default {
     //       formData.append(key, object[key]);
     //       return formData;
     //     }, new FormData());
-    //   Vue.prototype.$api.post(urlData, getFormData(payload)).then(() => {
+    //   api.post(urlData, getFormData(payload)).then(() => {
     //     commit("setSaveStatusJustificativaAbs");
     //   });
     // },
     loadTempoLogadoSupervisor({ commit }, payload) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}api/shared/supervisor/tempo_logado/${payload}`)
         .then(res => {
           commit('setTempoLogadoSupervisor', res.data)

@@ -1,4 +1,4 @@
-import Vue from 'vue'
+import api from '@/plugins/axios.js'
 import config from '../../../core/config.js'
 
 const MenuItemAgrupamentoService = {
@@ -10,7 +10,7 @@ const MenuItemAgrupamentoService = {
   async getAll() {
     try {
       const urlData = `${config.pyxisReceptivoUrl}receptivo/menu/agrupamento/listar`
-      const res = await Vue.prototype.$api.get(urlData)
+      const res = await api.get(urlData)
       return res.data
     } catch (error) {
       console.error('Erro ao recuperar itens de agrupamento de menu:', error)
@@ -27,7 +27,7 @@ const MenuItemAgrupamentoService = {
   async getById(id) {
     try {
       const urlData = `${config.pyxisReceptivoUrl}receptivo/menu/agrupamento/${id}`
-      const res = await Vue.prototype.$api.get(urlData)
+      const res = await api.get(urlData)
       return res.data
     } catch (error) {
       console.error('Erro ao recuperar item de agrupamento de menu pelo ID:', error)
@@ -44,7 +44,7 @@ const MenuItemAgrupamentoService = {
   async create(data) {
     try {
       const urlData = `${config.pyxisReceptivoUrl}receptivo/menu/agrupamento/novo`
-      const res = await Vue.prototype.$api.post(urlData, data)
+      const res = await api.post(urlData, data)
       return res.data
     } catch (error) {
       console.error('Erro ao criar item de agrupamento de menu:', error)
@@ -62,7 +62,7 @@ const MenuItemAgrupamentoService = {
   async update(id, data) {
     try {
       const urlData = `${config.pyxisReceptivoUrl}receptivo/menu/agrupamento/editar/${id}`
-      const res = await Vue.prototype.$api.put(urlData, data)
+      const res = await api.put(urlData, data)
       return res.data
     } catch (error) {
       console.error('Erro ao atualizar item de agrupamento de menu:', error)
@@ -79,7 +79,7 @@ const MenuItemAgrupamentoService = {
   async delete(id) {
     try {
       const urlData = `${config.pyxisReceptivoUrl}receptivo/menu/agrupamento/delete/${id}`
-      const res = await Vue.prototype.$api.delete(urlData)
+      const res = await api.delete(urlData)
       return res.data
     } catch (error) {
       console.error('Erro ao excluir item de agrupamento de menu:', error)
@@ -89,7 +89,7 @@ const MenuItemAgrupamentoService = {
   async ToggleStatus(id, data) {
     try {
       const urlData = `${config.pyxisReceptivoUrl}receptivo/menu/agrupamento/toggle-status/${id}`
-      const res = await Vue.prototype.$api.patch(urlData, data)
+      const res = await api.patch(urlData, data)
       return res.data
     } catch (error) {
       console.error('Erro ao atualizar o status:', error)

@@ -1,4 +1,4 @@
-import Vue from 'vue'
+// import Vue from 'vue'
 import Vuex from 'vuex'
 // import VuetifyTable from 'vuetify-datatable-extended'
 
@@ -8,7 +8,7 @@ import state from './state'
 import getters from './getters'
 import modules from './modules'
 
-Vue.use(Vuex)
+// Vue.use(Vuex)
 // Vue.use(VuetifyTable)
 export default new Vuex.Store({
   mutations,

@@ -1,4 +1,5 @@
-import Vue from 'vue'
+// import Vue from 'vue'
+import api from '@/plugins/axios.js'
 import config from '../core/config.js'
 
 export default {
@@ -37,17 +38,17 @@ export default {
   actions: {
     async loadResgateIsValid({ commit }, payload) {
       let urlData = `${config.baseUrl}api/shared/brindes/find_by_id/${payload}`
-      var result = await Vue.prototype.$api.get(urlData)
+      var result = await api.get(urlData)
       commit('setResgateIsValid', result.data[0].PERMITIR_RESGATE)
     },
     async loadMyCash({ commit }, paylaod) {
       let urlData = `${config.baseUrl}api/shared/brindes/my_coins/${paylaod}`
-      var res = await Vue.prototype.$api.get(urlData)
+      var res = await api.get(urlData)
       commit('setMyCash', res.data)
     },
     async loadListProducts({ commit }) {
       let urlData = `${config.baseUrl}api/shared/brindes/get_list_products`
-      let res = await Vue.prototype.$api.get(urlData)
+      let res = await api.get(urlData)
       await commit('setListProducts', res.data)
     },
     async inserirProdutosActions({ commit }, payload) {
@@ -57,7 +58,7 @@ export default {
           FormData.append(key, object[key])
           return FormData
         }, new FormData())
-      await Vue.prototype.$api.post(urlData, getFormData(payload))
+      await api.post(urlData, getFormData(payload))
       await commit('setInserirProdutos')
     },
     async atualizarProdutoActions({ commit }, payload) {
@@ -67,7 +68,7 @@ export default {
           FormData.append(key, object[key])
           return FormData
         }, new FormData())
-      await Vue.prototype.$api.post(urlData, getFormData(payload)).then(() => {
+      await api.post(urlData, getFormData(payload)).then(() => {
         commit('setAtualizarProduto')
       })
     },
@@ -78,7 +79,7 @@ export default {
           FormData.append(key, object[key])
           return FormData
         }, new FormData())
-      await Vue.prototype.$api.post(urlData, getFormData(paylaod))
+      await api.post(urlData, getFormData(paylaod))
       await commit('setAtualizarVisibilidadeDoProduto')
     },
 
@@ -89,7 +90,7 @@ export default {
           FormData.append(key, object[key])
           return FormData
         }, new FormData())
-      await Vue.prototype.$api.post(urlData, getFormData(payload))
+      await api.post(urlData, getFormData(payload))
       await commit('setComprarProduto')
     }
   },

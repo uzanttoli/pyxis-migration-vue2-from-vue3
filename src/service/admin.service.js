@@ -1,4 +1,5 @@
-import Vue from 'vue'
+// import Vue from 'vue'
+import api from '@/plugins/axios.js'
 import config from '../core/config'
 
 export default {
@@ -16,12 +17,12 @@ export default {
   },
   actions: {
     loadSobreNos({ commit }) {
-      Vue.prototype.$api.get(`${config.baseUrl}api/shared/sobre_nos/sobreNos/`).then(res => {
+      api.get(`${config.baseUrl}api/shared/sobre_nos/sobreNos/`).then(res => {
         commit('setSobreNos', res.data)
       })
     },
     loadLogsPyxis({ commit }) {
-      Vue.prototype.$api
+      api
         .get(`${config.baseUrl}api/shared/registro_log_pyxis/logsPyxis`)
         .then(res => {
           commit('setLogsPyxis', res.data)
