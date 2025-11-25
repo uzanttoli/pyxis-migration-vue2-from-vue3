@@ -110,6 +110,7 @@
 
 <script>
   export default {
+    name: 'project-board',
     props: {
       items: {
         type: [Array, Object]

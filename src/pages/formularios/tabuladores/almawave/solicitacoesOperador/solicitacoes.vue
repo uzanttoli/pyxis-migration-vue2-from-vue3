@@ -39,7 +39,7 @@
                     <validation-provider
                       v-slot="{ errors }"
                       name="Email"
-                      rules="required|email_valid"
+                      rules="required"
                     >
                       <v-text-field
                         placeholder="Informe seu email corporativo"
@@ -101,18 +101,18 @@
 
 <script>
   import config from '../../../../../core/config'
-  import { ValidationObserver, ValidationProvider, Validator } from 'vee-validate'
+  import { ValidationObserver, ValidationProvider } from 'vee-validate'
 
-  Validator.extend('email_valid', {
-    getMessage: field =>
-      `${field} deve conter o dominio almavivadobrasil.com.br ou almavivaexperience.com.br`,
-    //   validate: (value) => /^[a-zA-Z]+$/.test(value),
-    // validate: (value) => new RegExp(`^[\\w\\.-]+@${"almavivadobrasil.com.br"}$${"almavivaexpecience.com.br"}$`, "i").test(value),
-    validate: value =>
-      new RegExp(`^[\\w\\.-]+@(almavivadobrasil.com.br|almavivaexperience.com.br)$`, 'i').test(
-        value
-      )
-  })
+  // Validator.extend('email_valid', {
+  //   getMessage: field =>
+  //     `${field} deve conter o dominio almavivadobrasil.com.br ou almavivaexperience.com.br`,
+  //   //   validate: (value) => /^[a-zA-Z]+$/.test(value),
+  //   // validate: (value) => new RegExp(`^[\\w\\.-]+@${"almavivadobrasil.com.br"}$${"almavivaexpecience.com.br"}$`, "i").test(value),
+  //   validate: value =>
+  //     new RegExp(`^[\\w\\.-]+@(almavivadobrasil.com.br|almavivaexperience.com.br)$`, 'i').test(
+  //       value
+  //     )
+  // })
 
   export default {
     components: { ValidationObserver, ValidationProvider },

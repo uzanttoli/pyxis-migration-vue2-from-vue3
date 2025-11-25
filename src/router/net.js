@@ -594,7 +594,7 @@ const routes = [
     }
   },
   {
-    path: '*',
+    path: '/:pathMach(.*)*',
     name: 'Permissao',
     component: notPermission
   },
@@ -802,12 +802,13 @@ const routes = [
     path: '/pyxis/operacoes/dados-online/',
     name: 'Operação Dados Online',
     component: () => import('../pages/operacao/dadosOnline/dadosOnline.component.vue')
-  },
-
-  {
-    path: '*',
-    redirect: '/'
   }
+
+  // {
+  //   path: '/:pathMach(.*)*',
+  //   name: 'NotFound',
+  //   redirect: '/'
+  // }
 ]
 
 export default routes

@@ -53,6 +53,7 @@
 <script>
   import { DesconexaoChamadas } from '../../../data/services/desconexaoChamadas/DesconexaoChamadas'
   export default {
+    name: 'data-table',
     props: {
       action: {
         type: Boolean,

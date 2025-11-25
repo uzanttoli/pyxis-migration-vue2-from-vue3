@@ -9,3 +9,5 @@ const percentage = {
     }
   }
 }
+
+export default percentage

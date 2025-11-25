@@ -14,7 +14,7 @@
 </template>
 <script>
   export default {
-    name: 'Header',
+    name: 'tab-header',
     props: {
       title: {
         type: String,

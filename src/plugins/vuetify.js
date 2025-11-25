@@ -2,13 +2,14 @@
 // import '@fortawesome/fontawesome-free/css/all.css'
 // import 'material-design-icons-iconfont/dist/material-design-icons.css'
 
-import Vue from 'vue'
-import Vuetify from 'vuetify/lib/framework'
+// import Vue from 'vue'
+// import Vuetify from 'vuetify/lib/framework'
+import { createVuetify } from 'vuetify'
 import colors from 'vuetify/lib/util/colors'
 
-Vue.use(Vuetify)
+// Vue.use(Vuetify)
 
-export default new Vuetify({
+export default createVuetify({
   icons: {
     iconfont: 'md' || 'fa' || 'md'
   },

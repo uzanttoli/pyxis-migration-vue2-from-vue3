@@ -18,6 +18,7 @@
   import MenuListTop from '@/shared/components/MenuListTop.vue'
   import Farol from './Farol.vue'
   export default {
+    name: 'painel-executivo',
     components: { MenuListTop, Farol },
     data: () => ({
       selecionado: null,

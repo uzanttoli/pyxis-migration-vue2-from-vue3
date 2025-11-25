@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
+    "server": "npm run serve",
+    "fix": "vue-cli-service lint --fix && prettier --write \"src/**/*.{js,vue,css,scss,json}\"",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },

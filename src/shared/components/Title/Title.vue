@@ -23,7 +23,7 @@
 
 <script>
   export default {
-    name: 'Title',
+    name: 'ui-title',
     props: {
       icon: {
         type: String,

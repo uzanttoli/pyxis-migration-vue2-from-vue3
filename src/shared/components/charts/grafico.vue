@@ -12,7 +12,7 @@
   am4core.useTheme(am4themes_animated)
 
   export default {
-    name: 'amchart4',
+    name: 'am-chart4',
     data: () => ({
       interval: null
     }),

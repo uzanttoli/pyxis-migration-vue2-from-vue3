@@ -6,7 +6,7 @@
 
 <script>
   export default {
-    name: 'Column',
+    name: 'ui-column',
     props: {
       cols: {
         type: Number,

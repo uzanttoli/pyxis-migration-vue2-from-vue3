@@ -12,7 +12,7 @@
 </template>
 <script>
   export default {
-    name: 'TextArea',
+    name: 'ui-textarea',
     components: {},
     props: {
       label: {

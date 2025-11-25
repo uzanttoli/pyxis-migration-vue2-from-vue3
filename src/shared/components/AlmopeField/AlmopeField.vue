@@ -9,7 +9,7 @@
         label="Almope"
         :value="almope"
         @input="handleValue"
-        @keyup.enter.native="handleSearch($event.target.value)"
+        @keyup.enter="handleSearch($event.target.value)"
         @blur="handleBlur"
       />
     </Column>

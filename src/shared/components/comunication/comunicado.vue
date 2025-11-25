@@ -1,6 +1,6 @@
 <template>
   <div class="text-center">
-    <v-dialog v-model="_dialog" :max-width="maxWidth">
+    <v-dialog v-model="internalDialog" :max-width="maxWidth">
       <v-card height="100vh" class="overflow-hidden">
         <v-card-title class="text-h5 grey lighten-2">
           {{ title }}
@@ -84,9 +84,14 @@
       }
     },
     data: () => ({}),
-    methods: {
-      _dialog() {
-        this.dialog = false
+    computed: {
+      internalDialog: {
+        get() {
+          return this.dialog
+        },
+        set(val) {
+          this.$emit('update:dialog', val)
+        }
       }
     }
   }

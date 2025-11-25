@@ -14,7 +14,7 @@
 <script>
   export default {
     components: {},
-    name: 'Select',
+    name: 'ui-select',
     props: {
       items: {
         type: Array,

@@ -83,6 +83,7 @@
   import DatePicker from '@/shared/components/DatePicker/DatePicker.vue'
   import { ExecutivoService } from '@/data/services/relatorioOnline'
   export default {
+    name: 'farol-executivo',
     components: { DatePicker },
     data: () => ({
       dados: [],

@@ -32,6 +32,7 @@
   import validacaoAcesso from '../../../mixins/validacao'
   import Utils from '@/data/services/common/Utils'
   export default {
+    name: 'ocupacao-page',
     components: {
       gerencialPausas,
       gerencialAbs,

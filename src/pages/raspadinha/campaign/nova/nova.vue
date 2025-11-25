@@ -1,7 +1,7 @@
 <template>
   <v-card class="rounded-xl pa-8" :loading="loading">
     <div class="d-flex flex-row justify-between align-center">
-      <Title icon="fa-solid fa-receipt" title="Nova Campanha" />
+      <UiTitle icon="fa-solid fa-receipt" title="Nova Campanha" />
     </div>
     <v-container>
       <v-col lg="6" offset-lg="3">
@@ -98,7 +98,7 @@
   import CampaignService from '@/data/services/scratchCard/CampaignService'
   import ScratchCardPermissionsService from '@/data/services/scratchCard/Permissions'
   //Componentes
-  import Title from '@/shared/components/Title/Title.vue'
+  import UiTitle from '@/shared/components/Title/Title.vue'
   import UploadFile from '@/shared/components/UploadFile/UploadFile.vue'
   import DatePickerRange from '@/shared/components/DatePicker/DatePickerRange.vue'
   import { CustomButton } from '@/shared/components/Button'
@@ -110,7 +110,7 @@
   export default {
     name: 'NovaCampanha',
     components: {
-      Title,
+      UiTitle,
       UploadFile,
       DatePickerRange,
       CustomButtonRoot: CustomButton.Root,

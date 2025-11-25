@@ -23,6 +23,7 @@
 
 <script>
   export default {
+    name: 'footer-component',
     data: () => ({
       icons: ['mdi-facebook', 'mdi-twitter', 'mdi-linkedin', 'mdi-instagram']
     })

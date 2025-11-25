@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 
 import config from '../core/config'
 import store from '../store/store'
@@ -13,12 +13,12 @@ import Swal from 'sweetalert2/dist/sweetalert2'
 import { PopupLabService } from '@/data/services/Acoes'
 import { mostrarPopup } from '@/pages/acoes/popupLab/popupService'
 //
-Vue.use(VueRouter)
+// Vue.use(VueRouter)
 
 const routes = [...routersNet, ...routersEnel]
 
-const router = new VueRouter({
-  mode: 'history',
+const router = createRouter({
+  history: createWebHistory(),
   base: process.env.BASE_URL,
   routes,
   ignoreDuplicateNavigation: true

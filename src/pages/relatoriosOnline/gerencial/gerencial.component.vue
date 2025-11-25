@@ -82,7 +82,7 @@
   import config from '../../../core/config'
   import validacaoAcesso from '../../../mixins/validacao'
   export default {
-    name: 'Gerencial',
+    name: 'gerencial-page',
     mixins: [validacaoAcesso],
     components: {
       TmtComponent,

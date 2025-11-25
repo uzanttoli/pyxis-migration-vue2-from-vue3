@@ -30,7 +30,7 @@
                 <template v-for="(list, index) in itemsFiltros" :key="list.title">
                   <v-list-item>
                     <v-list-item-content>
-                      <v-list-item-title v-text="list.title"></v-list-item-title>
+                      <v-list-item-title>{{ list.title }}</v-list-item-title>
                     </v-list-item-content>
                   </v-list-item>
 

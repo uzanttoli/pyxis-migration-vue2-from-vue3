@@ -119,20 +119,22 @@
         <v-icon v-else color="red">{{ iconUp }}</v-icon>
         {{ roundTmt(item.TMT_CONSOLIDADO) }}
       </template>
-      <template v-slot:item.FALADO_ANT="{ item }" :class="itemRowBackground">
-        <v-icon v-if="calcularTmt(item.CHAMADAS_ANT, item.FALADO_ANT) == 0" color="grey">
-          {{ iconZero }}
-        </v-icon>
-        <v-icon
-          v-else-if="
-            calcularMeta(calcularTmt(item.CHAMADAS_ANT, item.FALADO_ANT), meta, true, item)
-          "
-          color="green"
-        >
-          {{ iconDown }}
-        </v-icon>
-        <v-icon v-else color="red">{{ iconUp }}</v-icon>
-        {{ calcularTmt(item.CHAMADAS_ANT, item.FALADO_ANT) }}
+      <template v-slot:item.FALADO_ANT="{ item }">
+        <span :class="itemRowBackground()">
+          <v-icon v-if="calcularTmt(item.CHAMADAS_ANT, item.FALADO_ANT) == 0" color="grey">
+            {{ iconZero }}
+          </v-icon>
+          <v-icon
+            v-else-if="
+              calcularMeta(calcularTmt(item.CHAMADAS_ANT, item.FALADO_ANT), meta, true, item)
+            "
+            color="green"
+          >
+            {{ iconDown }}
+          </v-icon>
+          <v-icon v-else color="red">{{ iconUp }}</v-icon>
+          {{ calcularTmt(item.CHAMADAS_ANT, item.FALADO_ANT) }}
+        </span>
       </template>
       <template v-slot:item.FALADO2="{ item }">
         <v-icon v-if="calcularTmt(item.CHAMADAS2, item.FALADO2) == 0" color="grey">

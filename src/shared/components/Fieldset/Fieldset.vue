@@ -10,7 +10,7 @@
 
 <script>
   export default {
-    name: 'Fieldset',
+    name: 'ui-fieldset',
     props: {
       title: {
         type: [String, Number],

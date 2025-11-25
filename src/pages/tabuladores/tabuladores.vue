@@ -85,6 +85,7 @@
   import { FormGeneratorSchemaService } from '../../data/services/formGenerator'
   import Vue from 'vue'
   export default {
+    name: 'tabuladores-page',
     components: { Header, TabuladoresContent, PyxFormsContent },
     data: () => ({
       formularios: [],

@@ -476,7 +476,7 @@
         MEIO_DE_CONTATO: null
       },
       numCasoSearch: null,
-      _oldValues: [{}],
+      oldValues: [{}],
       itemSimNao: ['SIM', 'NÃO'],
       listMotivoNaoUtilizacao: [],
       dados: [],

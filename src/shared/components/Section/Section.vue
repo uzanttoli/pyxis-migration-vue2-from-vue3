@@ -14,6 +14,7 @@
 
 <script>
   export default {
+    name: 'ui-section',
     data() {
       return {}
     }

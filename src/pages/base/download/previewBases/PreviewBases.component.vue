@@ -1,6 +1,6 @@
 <template>
   <v-card class="mt-2 rounded-xl" v-if="dadosConsulta != ''" elevation="0">
-    <v-card-title v-html="titleTratado()"></v-card-title>
+    <v-card-title>{{titleTratado()}}</v-card-title>
     <v-divider></v-divider>
     <v-data-table
       no-data-text="Não há dados no momento"

@@ -68,6 +68,7 @@
 <script>
   import config from '../../../core/config'
   export default {
+    name: 'tabela-component',
     props: {
       title: {
         type: String,

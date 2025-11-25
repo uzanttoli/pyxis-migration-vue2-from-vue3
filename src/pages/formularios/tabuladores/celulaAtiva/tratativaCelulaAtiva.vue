@@ -633,12 +633,13 @@
         // segundos
         this.interval = setInterval(() => {
           if (this.pauseTime) return
-          if (timeStart[2] == 59) {
+          if (timeStart[1] == 59 && timeStart[2] == 59) {
             timeStart[2] = 0
-            timeStart[1]++
-          } else if (timeStart[1] == 59 && timeStart[2] == 59) {
             timeStart[1] = 0
             timeStart[0]++
+          } else if (timeStart[2] == 59) {
+            timeStart[2] = 0
+            timeStart[1]++
           } else {
             timeStart[2]++
           }

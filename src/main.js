@@ -3,7 +3,8 @@
 import './assets/styles.css'
 import './assets/border-glow.css'
 import './assets/diamond.css'
-import Vue from 'vue'
+// import Vue from 'vue'
+import { createApp } from 'vue'
 import App from './App.vue'
 import vuetify from './plugins/vuetify'
 import router from './router'
@@ -18,7 +19,7 @@ import store from './store/store'
 // import JsonExcel from 'vue-json-excel'
 // import Notifications from 'vue-notification'
 import 'sweetalert2/dist/sweetalert2.min.css'
-import VeeValidate from 'vee-validate'
+// import VeeValidate from 'vee-validate'
 // import { messages as messagesPtBR, attributes as attributesPtBR } from 'vee-validate/dist/locale/pt_BR'
 import { ValidationObserver, ValidationProvider } from 'vee-validate'
 
@@ -38,31 +39,35 @@ import './js/component.js'
 import './js/filter.js'
 
 // Vue.prototype.alasql = alasqlJs
-Vue.prototype.moment = moment
-Vue.prototype.$api = api
+// Vue.prototype.moment = moment
+// Vue.prototype.$api = api
 
-Vue.config.productionTip = false
+// Vue.config.productionTip = false
 
 // Vue.use(VueQuillEditor)
 // Vue.use(VueTheMask)
 // Vue.use(VueApexCharts)
 
 // Vue.component('downloadExcel', JsonExcel)
-Vue.component('apexchart', VueApexCharts)
+// Vue.component('apexchart', VueApexCharts)
 
-Vue.component('ValidationObserver', ValidationObserver)
-Vue.component('ValidationProvider', ValidationProvider)
+const app = createApp(App)
 
-Vue.mixin({
+app.component('ValidationObserver', ValidationObserver)
+app.component('ValidationProvider', ValidationProvider)
+
+app.mixin({
   methods: {
     replaceUrlMultiParamSeparator: str => str.replace(/;/g, '|')
   }
 })
 
-new Vue({
-  router,
-  // i18n,
-  store,
-  vuetify,
-  render: h => h(App)
-}).$mount('#app')
+app.use(router).use(store).use(vuetify).mount('#app')
+
+// new Vue({
+//   router,
+//   // i18n,
+//   store,
+//   vuetify,
+//   render: h => h(App)
+// }).$mount('#app')

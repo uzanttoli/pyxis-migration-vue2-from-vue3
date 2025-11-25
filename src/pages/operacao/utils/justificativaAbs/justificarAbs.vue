@@ -52,7 +52,7 @@
                         <v-icon size="18" color="green">fa-solid fa-user-check</v-icon>
                         <p class="font-weight-bold pa-0 ma-0">Justificando {{ item.ALMOPE }}</p>
                       </div>
-                      <validation-observer v-slot="{ invalid, validate }" ref="observer">
+                      <validation-observer v-slot="{ validate }" ref="observer">
                         <form @submit.prevent="validate().then(submit)">
                           <validation-provider
                             v-slot="{ errors }"

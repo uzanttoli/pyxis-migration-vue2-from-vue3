@@ -60,6 +60,7 @@
 
 <script>
   export default {
+    name: 'humor-modal',
     data: () => ({
       motivosHumor: [
         {

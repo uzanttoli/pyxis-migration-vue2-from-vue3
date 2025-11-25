@@ -31,7 +31,7 @@
   am4core.useTheme(am4themes_animated)
   am4core.options.autoDispose = true
   export default {
-    name: 'amchart',
+    name: 'am-chart',
     props: {
       data: {
         type: Array,

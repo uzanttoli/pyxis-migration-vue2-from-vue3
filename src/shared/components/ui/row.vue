@@ -6,7 +6,7 @@
 
 <script>
   export default {
-    name: 'Linha',
+    name: 'ui-linha',
     props: {
       align: {
         type: String,

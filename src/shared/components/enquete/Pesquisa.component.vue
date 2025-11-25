@@ -13,6 +13,7 @@
 
 <script>
   export default {
+    name: 'pesquisa-component',
     data() {
       return {
         perguntas: [
